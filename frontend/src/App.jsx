@@ -28,11 +28,13 @@ function App() {
 
   return (
     <Router>
-      <div className="min-h-screen bg-black text-gold-400">
-        <Header onLoginClick={() => setShowLogin(true)} />
-        <Ticker />
-        <SocialMediaOverlay />
-        {showLogin && <LoginPopup onClose={() => setShowLogin(false)} />}
+      <div className="min-h-screen bg-black text-gold-400 relative">
+        <SnowEffect />
+        <div className="relative z-10">
+          <Header onLoginClick={() => setShowLogin(true)} />
+          <Ticker />
+          <SocialMediaOverlay />
+          {showLogin && <LoginPopup onClose={() => setShowLogin(false)} />}
         
         <Routes>
           <Route path="/" element={<Home />} />
