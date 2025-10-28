@@ -37,7 +37,7 @@ const Header = ({ onLoginClick }) => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 header-metallic-green border-b border-gold-400/30 gold-glow">
+    <header className="fixed top-0 left-0 right-0 z-50 header-metallic-shine border-b border-gold-400/30 gold-glow">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo Section */}

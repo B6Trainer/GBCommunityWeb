@@ -109,7 +109,7 @@ body::before {
   text-shadow: 
     0 1px 0 #FFC700,
     0 2px 0 #FFB000,
-    0 3px 0 #E69500,
+    
     0 4px 5px rgba(0, 0, 0, 0.5),
     0 0 20px rgba(255, 215, 0, 0.6);
 }
@@ -208,7 +208,7 @@ body::before {
 }
 
 .logo-face {
-  width: 42.5px;
+  width: 62.5px;
   height: 42.5px;
   background: linear-gradient(135deg, #FFD700 0%, #FFC700 25%, #FFB000 50%, #FFC700 75%, #FFD700 100%);
   box-shadow: 
@@ -225,9 +225,11 @@ body::before {
   box-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
 }
 
-/* Header with dark green metallic shining */
-.header-metallic-green {
-  background: linear-gradient(135deg, #0d2818 0%, #1a3d2e 25%, #0d2818 50%, #1a3d2e 75%, #0d2818 100%);
+/* Header with metallic shining */
+.header-metallic-shine {
+ 
+  /* background: linear-gradient(90deg, hsla(213, 77%, 14%, 1) 0%, hsla(202, 27%, 45%, 1) 100%); */
+  background: linear-gradient(90deg, hsla(0, 0%, 5%, 1) 0%, hsla(126, 82%, 33%, 1) 100%);
   background-size: 200% 200%;
   animation: metallic-shine 8s ease-in-out infinite;
   box-shadow: 
