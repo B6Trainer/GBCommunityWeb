@@ -63,7 +63,7 @@ const LoginPopup = ({ onClose }) => {
 
           <button
             type="submit"
-            className="w-full py-3 bg-gradient-to-r from-gold-600 to-gold-500 text-black font-bold rounded-lg hover:from-gold-500 hover:to-gold-400 transition-smooth gold-glow"
+            className="w-full btn-metallic-gold"
             data-testid="login-submit-button"
           >
             Login
