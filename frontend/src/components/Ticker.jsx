@@ -25,11 +25,7 @@ const Ticker = () => {
           ))}
         </div>
       </div>
-      <div className="w-1/5 h-full flex items-center justify-center border-l border-gold-400/30"
-           style={{ 
-             background: 'linear-gradient(135deg, #FFD700 0%, #FFC700 50%, #FFD700 100%)',
-             opacity: 1
-           }}>
+      <div className="w-1/5 h-full flex items-center justify-center border-l border-gold-400/30 ticker-gold-opaque">
         <div className="text-center px-4">
           <div className="flex items-center justify-center gap-2">
             <span className="text-xs font-medium text-black">Gold Price:</span>
