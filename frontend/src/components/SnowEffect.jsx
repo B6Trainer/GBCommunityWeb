@@ -14,14 +14,14 @@ const SnowEffect = () => {
     const snowflakes = [];
     const numberOfSnowflakes = 100;
 
-    // Create snowflakes
+    // Create snowflakes with slower speed
     for (let i = 0; i < numberOfSnowflakes; i++) {
       snowflakes.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
         radius: Math.random() * 3 + 1,
-        speed: Math.random() * 1 + 0.5,
-        drift: Math.random() * 0.5 - 0.25,
+        speed: Math.random() * 0.3 + 0.2, // Reduced from 1 + 0.5 to 0.3 + 0.2
+        drift: Math.random() * 0.3 - 0.15, // Reduced from 0.5 - 0.25
       });
     }
 
@@ -36,7 +36,7 @@ const SnowEffect = () => {
         ctx.arc(flake.x, flake.y, flake.radius, 0, Math.PI * 2);
         ctx.fill();
 
-        // Update position
+        // Update position with slower speed
         flake.y += flake.speed;
         flake.x += flake.drift;
 
@@ -73,8 +73,8 @@ const SnowEffect = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed top-0 left-0 w-full h-full pointer-events-none z-0"
-      style={{ opacity: 0.6 }}
+      className="fixed top-0 left-0 w-full h-full pointer-events-none"
+      style={{ opacity: 0.6, zIndex: 1 }}
     />
   );
 };
