@@ -14,7 +14,7 @@ const Ticker = () => {
   const goldPriceGram = import.meta.env.VITE_GOLD_PRICE_GRAM || '85.23';
 
   return (
-    <div className="fixed top-20 left-0 right-0 z-40 glass-morphism border-b border-gold-400/20 h-12 flex items-center">
+    <div className="fixed top-20 left-0 right-0 z-40 glass-morphism border-b border-gold-400/30 gold-glow h-12 flex items-center">
       <div className="w-4/5 overflow-hidden">
         <div className="ticker-content flex items-center gold-text">
           {[...tickerMessages, ...tickerMessages].map((message, index) => (
