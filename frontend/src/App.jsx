@@ -54,6 +54,7 @@ function App() {
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+        </div>
       </div>
     </Router>
   );
