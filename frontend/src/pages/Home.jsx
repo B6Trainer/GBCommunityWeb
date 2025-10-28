@@ -247,7 +247,7 @@ const Home = () => {
                     {index + 1}
                   </div>
                   <div className="flex justify-center mb-4 mt-4">
-                    <div className="w-20 h-20 rounded-full glass-morphism border-2 border-gold-400 flex items-center justify-center animate-float">
+                    <div className="w-20 h-20 rounded-full glass-morphism border-2 border-gold-400 flex items-center justify-center animate-float icon-twinkle">
                       <Icon className="w-10 h-10 text-gold-400 animate-glow" />
                     </div>
                   </div>
