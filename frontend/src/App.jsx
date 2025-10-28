@@ -28,9 +28,9 @@ function App() {
 
   return (
     <Router>
-      <div className="min-h-screen bg-black text-gold-400 relative">
+      <div className="min-h-screen text-gold-400 relative">
         <SnowEffect />
-        <div className="relative z-10">
+        <div className="relative" style={{ zIndex: 10 }}>
           <Header onLoginClick={() => setShowLogin(true)} />
           <Ticker />
           <SocialMediaOverlay />
