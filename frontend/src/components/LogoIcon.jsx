@@ -13,35 +13,19 @@ const LogoIcon = () => {
   }, []);
 
   return (
-    <div className="relative animate-float">
+    <div className="relative animate-float logo-icon-container">
       {/* Robot face container - Gold theme */}
       <div className="relative">
         {/* V-shaped antenna on top - NO DOTS */}
         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
           <div className="relative w-7 h-5 flex justify-center">
-            <div className="absolute left-1 w-1 h-5 bg-gradient-to-b from-gold-400 to-gold-500 transform -rotate-45 origin-bottom rounded-t-full" 
-                 style={{ boxShadow: '0 0 8px rgba(255, 215, 0, 0.8)' }} />
-            <div className="absolute right-1 w-1 h-5 bg-gradient-to-b from-gold-400 to-gold-500 transform rotate-45 origin-bottom rounded-t-full"
-                 style={{ boxShadow: '0 0 8px rgba(255, 215, 0, 0.8)' }} />
+            <div className="absolute left-1 antenna-arm transform -rotate-45 origin-bottom rounded-t-full" />
+            <div className="absolute right-1 antenna-arm transform rotate-45 origin-bottom rounded-t-full" />
           </div>
         </div>
         
         {/* Robot face - rounded square with gold metallic gradient */}
-        <div 
-          className="rounded-xl flex flex-col items-center justify-center relative overflow-hidden"
-          style={{
-            width: '42.5px',
-            height: '42.5px',
-            background: 'linear-gradient(135deg, #FFD700 0%, #FFC700 25%, #FFB000 50%, #FFC700 75%, #FFD700 100%)',
-            boxShadow: `
-              inset 0 1px 3px rgba(255,255,255,0.6),
-              inset 0 -2px 3px rgba(0,0,0,0.3),
-              0 0 20px rgba(255, 215, 0, 0.8),
-              0 0 40px rgba(255, 215, 0, 0.4)
-            `,
-            filter: 'drop-shadow(0 0 15px rgba(255, 215, 0, 0.8))',
-          }}
-        >
+        <div className="logo-face rounded-xl flex flex-col items-center justify-center relative overflow-hidden">
           {/* Eyes - circular */}
           <div className="flex space-x-2 mt-2.5 mb-0.5">
             <div 
