@@ -117,7 +117,7 @@ const Home = () => {
   return (
     <div className="pt-32 min-h-screen">
       {/* Hero Carousel Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 mb-32" data-testid="hero-section">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-20 mb-20" data-testid="hero-section">
         <div className="carousel-container">
           <Slider {...carouselSettings}>
             {carouselImages.map((image, index) => (
