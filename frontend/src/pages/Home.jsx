@@ -207,7 +207,7 @@ const Home = () => {
                 viewport={{ once: true }}
                 className="glass-morphism border border-gold-400/30 rounded-2xl p-6 hover:gold-glow transition-all duration-300 group"
               >
-                <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${benefit.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${benefit.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 icon-twinkle`}>
                   <Icon className="w-8 h-8 text-black" />
                 </div>
                 <h3 className="text-xl font-bold gold-text mb-3">{benefit.title}</h3>
