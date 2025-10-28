@@ -53,9 +53,6 @@ const SocialMediaOverlay = () => {
                 }`}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{
-                  color: social.color,
-                }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.boxShadow = social.hoverGlow;
                 }}
@@ -63,9 +60,9 @@ const SocialMediaOverlay = () => {
                   e.currentTarget.style.boxShadow = 'none';
                 }}
               >
-                <Icon className="w-6 h-6 flex-shrink-0" />
+                <Icon className="w-6 h-6 flex-shrink-0" style={{ color: social.color }} />
                 {isExpanded && (
-                  <span className="text-sm font-medium whitespace-nowrap text-gold-400">
+                  <span className="text-sm font-medium whitespace-nowrap" style={{ color: social.color }}>
                     {social.name}
                   </span>
                 )}
