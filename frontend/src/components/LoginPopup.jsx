@@ -82,7 +82,7 @@ const LoginPopup = ({ onClose }) => {
 
           <button
             onClick={handleGoogleLogin}
-            className="mt-6 w-full py-3 glass-morphism border border-gold-400/30 rounded-lg gold-text hover:bg-gold-400/10 transition-smooth flex items-center justify-center space-x-3"
+            className="mt-6 w-full btn-metallic-gold-outline flex items-center justify-center space-x-3"
             data-testid="google-login-button"
           >
             <svg className="w-6 h-6" viewBox="0 0 24 24">
