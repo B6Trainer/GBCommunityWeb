@@ -103,7 +103,7 @@ const Header = ({ onLoginClick }) => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div 
-          className="lg:hidden fixed top-20 right-0 w-2/5 h-3/5 glass-morphism border-l border-b border-gold-400 gold-glow rounded-bl-3xl overflow-y-auto animate-slide-in"
+          className="lg:hidden fixed top-20 right-0 w-[40%] h-[60vh] glass-morphism border-l border-b border-gold-400 gold-glow rounded-bl-3xl overflow-y-auto animate-slide-in"
           data-testid="mobile-menu"
         >
           <nav className="p-6 space-y-4">
