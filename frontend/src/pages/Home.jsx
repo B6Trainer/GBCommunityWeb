@@ -21,18 +21,18 @@ const Home = () => {
   const NextArrow = ({ onClick }) => (
     <button
       onClick={onClick}
-      className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full glass-morphism border border-gold-400 flex items-center justify-center hover:bg-gold-400/20 transition-all"
+      className="absolute right-2 top-1/2 -translate-y-1/2 z-10 carousel-arrow rounded-full flex items-center justify-center"
     >
-      <ChevronRight className="text-gold-400" />
+      <ChevronRight className="text-gold-400 w-4 h-4" />
     </button>
   );
 
   const PrevArrow = ({ onClick }) => (
     <button
       onClick={onClick}
-      className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full glass-morphism border border-gold-400 flex items-center justify-center hover:bg-gold-400/20 transition-all"
+      className="absolute left-2 top-1/2 -translate-y-1/2 z-10 carousel-arrow rounded-full flex items-center justify-center"
     >
-      <ChevronLeft className="text-gold-400" />
+      <ChevronLeft className="text-gold-400 w-4 h-4" />
     </button>
   );
 
