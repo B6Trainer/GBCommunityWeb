@@ -276,7 +276,7 @@ const Home = () => {
           <p className="text-gold-500 mb-8 text-lg">
             Join thousands of investors building wealth through digital gold
           </p>
-          <button className="btn-metallic-gold inline-flex items-center space-x-2">
+          <button className="btn-metallic-gold btn-twinkle inline-flex items-center space-x-2">
             <span>Get Started Now</span>
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
