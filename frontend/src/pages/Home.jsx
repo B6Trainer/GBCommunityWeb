@@ -117,20 +117,11 @@ const Home = () => {
   return (
     <div className="pt-32 min-h-screen">
       {/* Hero Carousel Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20" data-testid="hero-section">
-        <motion.h2
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-4xl font-bold gold-embossed text-center mb-12"
-        >
-          Discover Digital Gold
-        </motion.h2>
-        
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 mb-32" data-testid="hero-section">
         <div className="carousel-container">
           <Slider {...carouselSettings}>
             {carouselImages.map((image, index) => (
-              <div key={index} className="px-2">
+              <div key={index} className="px-4">
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -162,6 +153,9 @@ const Home = () => {
           }
           .carousel-container .slick-dots li.slick-active button:before {
             color: #FFD700;
+          }
+          .carousel-container .slick-slide > div {
+            margin: 0 8px;
           }
         `}</style>
       </section>
