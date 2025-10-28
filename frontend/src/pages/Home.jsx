@@ -127,47 +127,63 @@ const Home = () => {
           Discover Digital Gold
         </motion.h2>
         
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-          {carouselImages.map((image, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="relative group cursor-pointer"
-              onClick={() => setSelectedImage(image)}
-            >
-              <div className="aspect-video overflow-hidden rounded-2xl glass-morphism border border-gold-400/30 gold-glow hover:scale-105 transition-transform duration-300">
-                <img
-                  src={image}
-                  alt={`Gold investment ${index + 1}`}
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
+        <div className="carousel-container">
+          <Slider {...carouselSettings}>
+            {carouselImages.map((image, index) => (
+              <div key={index} className="px-2">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  className="relative group cursor-pointer"
+                  onClick={() => setSelectedImage(image)}
+                >
+                  <div className="aspect-video overflow-hidden rounded-2xl glass-morphism border border-gold-400/30 gold-glow hover:scale-105 transition-transform duration-300">
+                    <img
+                      src={image}
+                      alt={`Gold investment ${index + 1}`}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                </motion.div>
               </div>
-            </motion.div>
-          ))}
+            ))}
+          </Slider>
         </div>
+
+        <style>{`
+          .carousel-container .slick-dots {
+            bottom: -40px;
+          }
+          .carousel-container .slick-dots li button:before {
+            color: #FFD700;
+            font-size: 10px;
+          }
+          .carousel-container .slick-dots li.slick-active button:before {
+            color: #FFD700;
+          }
+        `}</style>
       </section>
 
-      {/* Image Popup */}
+      {/* Image Popup - 80% screen */}
       {selectedImage && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
           onClick={() => setSelectedImage(null)}
           data-testid="image-popup"
         >
-          <div className="relative max-w-4xl w-full">
+          <div className="relative w-[80%] h-[80%] flex items-center justify-center">
             <button
               onClick={() => setSelectedImage(null)}
-              className="absolute -top-12 right-0 text-gold-400 hover:text-gold-300 transition-smooth"
+              className="absolute -top-12 right-0 text-gold-400 hover:text-gold-300 transition-smooth z-10"
             >
               <X size={32} />
             </button>
             <img
               src={selectedImage}
               alt="Expanded view"
-              className="w-full rounded-2xl shadow-2xl gold-glow"
+              className="max-w-full max-h-full object-contain rounded-2xl shadow-2xl gold-glow"
             />
           </div>
         </div>
