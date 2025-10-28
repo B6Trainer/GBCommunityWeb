@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Ticker from './components/Ticker';
 import SocialMediaOverlay from './components/SocialMediaOverlay';
 import LoginPopup from './components/LoginPopup';
+import SnowEffect from './components/SnowEffect';
 import Home from './pages/Home';
 import About from './pages/About';
 import Plans from './pages/Plans';
