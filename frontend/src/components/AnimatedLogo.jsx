@@ -1,33 +1,36 @@
 import { useState, useEffect } from 'react';
 
 const AnimatedLogo = () => {
-  const text = 'Gold Bucks';
-  const [displayedText, setDisplayedText] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const text = 'GOLD BUCKS';
+  const [waveOffset, setWaveOffset] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (currentIndex < text.length) {
-        setDisplayedText(text.substring(0, currentIndex + 1));
-        setCurrentIndex(currentIndex + 1);
-      } else {
-        // Wait 10 seconds before restarting
-        setTimeout(() => {
-          setDisplayedText('');
-          setCurrentIndex(0);
-        }, 10000);
-      }
-    }, 200); // Letter animation speed
+      setWaveOffset((prev) => (prev + 1) % 100);
+    }, 50);
 
     return () => clearInterval(interval);
-  }, [currentIndex]);
+  }, []);
 
   return (
-    <div className="text-2xl font-bold">
-      <span className="gold-embossed tracking-wider">
-        {displayedText}
-        <span className="animate-pulse">|</span>
-      </span>
+    <div className="px-4 py-2 rounded-xl" 
+         style={{
+           background: 'linear-gradient(135deg, #FFD700 0%, #FFC700 25%, #FFB000 50%, #FFC700 75%, #FFD700 100%)',
+           boxShadow: 'inset 0 1px 3px rgba(255,255,255,0.5), inset 0 -1px 3px rgba(0,0,0,0.3), 0 4px 6px rgba(0,0,0,0.3)'
+         }}>
+      <div className="text-xl font-bold tracking-wider flex">
+        {text.split('').map((letter, index) => (
+          <span
+            key={index}
+            className="inline-block text-black transition-all duration-300"
+            style={{
+              transform: `translateY(${Math.sin((waveOffset + index * 10) * 0.1) * 5}px)`,
+            }}
+          >
+            {letter === ' ' ? '\u00A0' : letter}
+          </span>
+        ))}
+      </div>
     </div>
   );
 };
