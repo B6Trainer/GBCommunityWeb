@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { TrendingUp, Users, DollarSign, Briefcase, UserPlus, Wallet, GitBranch, Coins, X } from 'lucide-react';
+import { TrendingUp, Users, DollarSign, Briefcase, UserPlus, Wallet, GitBranch, Coins, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const Home = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -13,6 +16,53 @@ const Home = () => {
     'https://images.unsplash.com/photo-1605792657660-596af9009e82',
     'https://images.pexels.com/photos/1097946/pexels-photo-1097946.jpeg',
   ];
+
+  // Custom arrow components
+  const NextArrow = ({ onClick }) => (
+    <button
+      onClick={onClick}
+      className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full glass-morphism border border-gold-400 flex items-center justify-center hover:bg-gold-400/20 transition-all"
+    >
+      <ChevronRight className="text-gold-400" />
+    </button>
+  );
+
+  const PrevArrow = ({ onClick }) => (
+    <button
+      onClick={onClick}
+      className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full glass-morphism border border-gold-400 flex items-center justify-center hover:bg-gold-400/20 transition-all"
+    >
+      <ChevronLeft className="text-gold-400" />
+    </button>
+  );
+
+  const carouselSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      }
+    ]
+  };
 
   const benefits = [
     {
