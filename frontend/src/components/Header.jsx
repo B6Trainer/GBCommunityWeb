@@ -112,7 +112,7 @@ const Header = ({ onLoginClick }) => {
                 onLoginClick();
                 setIsMobileMenuOpen(false);
               }}
-              className="w-full px-4 py-3 glass-morphism border border-gold-400 gold-text rounded-lg hover:bg-gold-400/20 transition-smooth gold-glow text-center"
+              className="w-full btn-metallic-gold text-center"
               data-testid="mobile-login-button"
             >
               Login
