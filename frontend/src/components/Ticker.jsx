@@ -14,7 +14,8 @@ const Ticker = () => {
   const goldPriceGram = import.meta.env.VITE_GOLD_PRICE_GRAM || '85.23';
 
   return (
-    <div className="fixed top-20 left-0 right-0 z-40 glass-morphism border-b border-gold-400/30 gold-glow h-12 flex items-center">
+    <div className="fixed top-20 left-0 right-0 z-40 border-b border-gold-400/30 gold-glow h-12 flex items-center"
+         style={{ background: 'rgba(255, 215, 0, 0.1)' }}>
       <div className="w-4/5 overflow-hidden">
         <div className="ticker-content flex items-center gold-text">
           {[...tickerMessages, ...tickerMessages].map((message, index) => (
@@ -25,14 +26,22 @@ const Ticker = () => {
           ))}
         </div>
       </div>
-      <div className="w-1/5 h-full flex items-center justify-center glass-morphism border-l border-gold-400/30">
+      <div className="w-1/5 h-full flex items-center justify-center border-l border-gold-400/30"
+           style={{ 
+             background: 'linear-gradient(135deg, #FFD700 0%, #FFC700 50%, #FFD700 100%)',
+             opacity: 1
+           }}>
         <div className="text-center px-4">
-          <div className="text-xs gold-text">Gold Price</div>
-          <div className="text-sm font-bold text-gold-400">
-            ${goldPriceOz}/oz
-          </div>
-          <div className="text-xs text-gold-500">
-            ${goldPriceGram}/g
+          <div className="flex items-center justify-center gap-2">
+            <span className="text-xs font-medium text-black">Gold Price:</span>
+            <div className="flex flex-col items-start">
+              <div className="text-sm font-bold text-black">
+                ${goldPriceGram}/g
+              </div>
+              <div className="text-xs text-black/80">
+                ${goldPriceOz}/oz
+              </div>
+            </div>
           </div>
         </div>
       </div>
