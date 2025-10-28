@@ -83,7 +83,7 @@ const Header = ({ onLoginClick }) => {
           {/* Login Button - Desktop */}
           <button
             onClick={onLoginClick}
-            className="hidden lg:block px-6 py-2 glass-morphism border border-gold-400 gold-text rounded-lg hover:bg-gold-400/20 transition-smooth gold-glow"
+            className="hidden lg:block btn-metallic-gold"
             data-testid="desktop-login-button"
           >
             Login
