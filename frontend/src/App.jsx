@@ -6,7 +6,7 @@ import SocialMediaOverlay from './components/SocialMediaOverlay';
 import LoginPopup from './components/LoginPopup';
 import SnowEffect from './components/SnowEffect';
 import Footer from './components/Footer';
-import Home from './pages/Home';
+import Home from './pages/home/Home';
 import About from './pages/About';
 import Plans from './pages/Plans';
 import CommunityPlan from './pages/CommunityPlan';

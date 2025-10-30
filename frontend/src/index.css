@@ -13,6 +13,18 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --primary-color: #FFD700;
+  --primary-color-grad1: #FFC700;
+  --primary-color-grad2: #FFB000;
+  --secondary-color: #333;
+
+  --invert-color: #0f2419;
+  --invert-color-grad1: #1a3d2e;
+
+  --black-color: #000000;
+
+  --font-size-base: 16px;
 }
 
 body {
@@ -26,7 +38,7 @@ body {
   background-size: 400% 400%, 100% 100%, 100% 100%;
   background-blend-mode: normal;
   animation: silk-shimmer 10s ease infinite;
-  color: #FFD700;
+  color: var(--primary-color);
   overflow-x: hidden;
   position: relative;
 }
@@ -58,20 +70,20 @@ body::before {
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #000000;
+  background: var(--black-color);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #FFD700, #FFC700);
+  background: linear-gradient(180deg, var(--primary-color), var(--primary-color-grad1));
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #FFC700, #FFB000);
+  background: linear-gradient(180deg, var(--primary-color-grad1), var(--primary-color-grad2));
 }
 
 /* Glassmorphism effect */
@@ -90,7 +102,7 @@ body::before {
 
 /* Text gold effect */
 .gold-text {
-  background: linear-gradient(135deg, #FFD700 0%, #FFC700 50%, #FFD700 100%);
+  background: linear-gradient(135deg,var(--primary-color) 0%, var(--primary-color) 50%, var(--primary-color) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -105,10 +117,10 @@ body::before {
 
 /* Gold embossed text */
 .gold-embossed {
-  color: #FFD700;
+  color: var(--primary-color);
   text-shadow: 
-    0 1px 0 #FFC700,
-    0 2px 0 #FFB000,
+    0 1px 0 var(--primary-color-grad1),
+    0 2px 0 var(--primary-color-grad2),
     
     0 4px 5px rgba(0, 0, 0, 0.5),
     0 0 20px rgba(255, 215, 0, 0.6);
@@ -116,7 +128,7 @@ body::before {
 
 /* Metallic gold button */
 .btn-metallic-gold {
-  background: linear-gradient(135deg, #FFD700 0%, #FFC700 25%, #FFB000 50%, #FFC700 75%, #FFD700 100%);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color-grad1) 25%, var(--primary-color-grad2) 50%, var(--primary-color-grad1) 75%, var(--primary-color) 100%);
   background-size: 200% 200%;
   color: #000000;
   font-weight: 700;
@@ -172,11 +184,11 @@ body::before {
 .btn-metallic-gold-outline {
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
-  color: #FFD700;
+  color: var(--primary-color);
   font-weight: 600;
   padding: 12px 32px;
   border-radius: 8px;
-  border: 2px solid #FFD700;
+  border: 2px solid var(--primary-color);
   box-shadow: 
     0 0 15px rgba(255, 215, 0, 0.4),
     inset 0 0 10px rgba(255, 215, 0, 0.1);
@@ -186,7 +198,7 @@ body::before {
 
 .btn-metallic-gold-outline:hover {
   background: rgba(255, 215, 0, 0.1);
-  border-color: #FFC700;
+  border-color: var(--primary-color-grad1);
   box-shadow: 
     0 0 25px rgba(255, 215, 0, 0.6),
     inset 0 0 15px rgba(255, 215, 0, 0.2);
@@ -213,7 +225,7 @@ body::before {
 }
 
 .ticker-gold-opaque {
-  background: linear-gradient(135deg, #FFD700 0%, #FFC700 50%, #FFD700 100%);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color-grad1) 50%, var(--primary-color) 100%);
   opacity: 1;
 }
 
@@ -234,7 +246,7 @@ body::before {
 .logo-face {
   width: 32px;
   height: 32px;
-  background: linear-gradient(135deg, #FFD700 0%, #FFC700 25%, #FFB000 50%, #FFC700 75%, #FFD700 100%);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color-grad1) 25%, var(--primary-color-grad2) 50%, var(--primary-color-grad1) 75%, var(--primary-color) 100%);
   box-shadow: 
     inset 0 1px 2px rgba(255,255,255,0.6),
     inset 0 -1px 2px rgba(0,0,0,0.3),
@@ -245,21 +257,21 @@ body::before {
 .antenna-arm {
   width: 3px;
   height: 15px;
-  background: linear-gradient(to bottom, #FFD700, #FFC700);
+  background: linear-gradient(to bottom, var(--primary-color), var(--primary-color-grad1));
   box-shadow: 0 0 6px rgba(255, 215, 0, 0.8);
 }
 
 .logo-text-container {
   padding: 6px 12px;
   border-radius: 8px;
-  background: linear-gradient(135deg, #FFD700 0%, #FFC700 25%, #FFB000 50%, #FFC700 75%, #FFD700 100%);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color-grad1) 25%, var(--primary-color-grad2) 50%, var(--primary-color-grad1) 75%, var(--primary-color) 100%);
   box-shadow: inset 0 1px 2px rgba(255,255,255,0.5), inset 0 -1px 2px rgba(0,0,0,0.3), 0 3px 5px rgba(0,0,0,0.3);
   font-size: 14px;
   font-weight: 700;
 }
 
-/* Header - Mobile */
-.header-metallic-green {
+/* Header - background*/
+.header-metallic-shine {
   background: linear-gradient(135deg, #0d2818 0%, #1a3d2e 25%, #0d2818 50%, #1a3d2e 75%, #0d2818 100%);
   background-size: 200% 200%;
   animation: metallic-shine 8s ease-in-out infinite;
@@ -319,7 +331,7 @@ body::before {
 
 /* Buttons - Mobile */
 .btn-metallic-gold {
-  background: linear-gradient(135deg, #FFD700 0%, #FFC700 25%, #FFB000 50%, #FFC700 75%, #FFD700 100%);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color-grad1) 25%, var(--primary-color-grad2) 50%, var(--primary-color-grad1) 75%, var(--primary-color) 100%);
   background-size: 200% 200%;
   color: #000000;
   font-weight: 700;
@@ -358,22 +370,13 @@ body::before {
 .signin-input {
   background: rgba(255, 215, 0, 0.05);
   border: 1px solid rgba(255, 215, 0, 0.3);
-  color: #FFD700;
+  color: var(--primary-color);
   padding: 10px 12px;
   font-size: 14px;
   transition: all 0.3s ease;
 }
 
-/* Carousel arrows - Mobile */
-.carousel-arrow {
-  width: 28px;
-  height: 28px;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(8px);
-  border: 1px solid #FFD700;
-  box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
-  transition: all 0.3s ease;
-}
+
 
 /* Footer - Mobile */
 .footer-container {
@@ -394,216 +397,12 @@ body::before {
   align-items: center;
   justify-content: center;
   background: rgba(255, 215, 0, 0.1);
-  border: 1px solid #FFD700;
+  border: 1px solid var(--primary-color);
   border-radius: 50%;
   transition: all 0.3s ease;
 }
 
-/* ===================================
-   TABLET STYLES (640px and up)
-   =================================== */
-@media (min-width: 640px) {
-  .logo-face {
-    width: 38px;
-    height: 38px;
-  }
 
-  .antenna-arm {
-    width: 3.5px;
-    height: 18px;
-  }
-
-  .logo-text-container {
-    padding: 8px 16px;
-    font-size: 16px;
-    border-radius: 10px;
-  }
-
-  .card-gold-glossy {
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    padding: 1.25rem;
-  }
-
-  .icon-container {
-    width: 3.5rem;
-    height: 3.5rem;
-    margin-bottom: 0.875rem;
-  }
-
-  .btn-metallic-gold {
-    padding: 11px 28px;
-    font-size: 15px;
-  }
-
-  .signin-input {
-    padding: 11px 14px;
-/* Ticker background */
-.ticker-gold-translucent {
-  background: rgba(255, 215, 0, 0.1);
-}
-
-.ticker-gold-opaque {
-  background: linear-gradient(135deg, #FFD700 0%, #FFC700 50%, #FFD700 100%);
-  opacity: 1;
-}
-
-.signin-input::placeholder {
-  color: rgba(255, 215, 0, 0.5);
-}
-    font-size: 15px;
-  }
-
-  .carousel-arrow {
-    width: 30px;
-    height: 30px;
-  }
-
-  .social-icon {
-    width: 34px;
-    height: 34px;
-  }
-}
-
-/* ===================================
-   DESKTOP STYLES (1024px and up)
-   =================================== */
-@media (min-width: 1024px) {
-  .logo-face {
-    width: 42.5px;
-    height: 42.5px;
-    box-shadow: 
-      inset 0 1px 3px rgba(255,255,255,0.6),
-      inset 0 -2px 3px rgba(0,0,0,0.3),
-      0 0 20px rgba(255, 215, 0, 0.8),
-      0 0 40px rgba(255, 215, 0, 0.4);
-  }
-
-  .antenna-arm {
-    width: 4px;
-    height: 20px;
-    box-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
-  }
-
-  .logo-text-container {
-    padding: 10px 20px;
-    font-size: 18px;
-    border-radius: 12px;
-    box-shadow: inset 0 1px 3px rgba(255,255,255,0.5), inset 0 -2px 3px rgba(0,0,0,0.3), 0 4px 6px rgba(0,0,0,0.3);
-  }
-
-  .logo-icon-container {
-    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.8));
-  }
-
-  .header-metallic-green {
-    box-shadow: 
-      inset 0 1px 2px rgba(255,255,255,0.1),
-      inset 0 -1px 2px rgba(0,0,0,0.3),
-      0 2px 10px rgba(0,0,0,0.5);
-  }
-
-  .card-gold-glossy {
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    padding: 1.5rem;
-    box-shadow: 
-      inset 0 1px 2px rgba(255, 255, 255, 0.1),
-      inset 0 -1px 2px rgba(0, 0, 0, 0.1),
-      0 4px 15px rgba(0, 0, 0, 0.2);
-  }
-
-  .card-gold-glossy:hover {
-    box-shadow: 
-      inset 0 1px 2px rgba(255, 255, 255, 0.2),
-      inset 0 -1px 2px rgba(0, 0, 0, 0.1),
-      0 0 25px rgba(255, 215, 0, 0.4),
-      0 4px 20px rgba(0, 0, 0, 0.3);
-    transform: translateY(-4px);
-  }
-
-  .icon-container {
-    width: 4rem;
-    height: 4rem;
-    margin-bottom: 1rem;
-  }
-
-  .icon-container:hover {
-    transform: scale(1.1);
-  }
-
-  .btn-metallic-gold {
-    padding: 12px 32px;
-    border-radius: 8px;
-    font-size: 16px;
-    box-shadow: 
-      inset 0 2px 4px rgba(255, 255, 255, 0.6),
-      inset 0 -2px 4px rgba(0, 0, 0, 0.3),
-      0 0 20px rgba(255, 215, 0, 0.6),
-      0 4px 8px rgba(0, 0, 0, 0.3);
-  }
-
-  .btn-metallic-gold:hover {
-    background-position: 100% 100%;
-    box-shadow: 
-      inset 0 2px 4px rgba(255, 255, 255, 0.8),
-      inset 0 -2px 4px rgba(0, 0, 0, 0.2),
-      0 0 30px rgba(255, 215, 0, 0.8),
-      0 6px 12px rgba(0, 0, 0, 0.4);
-    transform: translateY(-2px);
-  }
-
-  .signin-popup {
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    box-shadow: 
-      inset 0 2px 4px rgba(255, 255, 255, 0.1),
-      inset 0 -2px 4px rgba(0, 0, 0, 0.2),
-      0 0 40px rgba(255, 215, 0, 0.3),
-      0 8px 32px rgba(0, 0, 0, 0.5);
-  }
-
-  .signin-input {
-    padding: 12px 16px;
-    font-size: 16px;
-  }
-
-  .signin-input:focus {
-    background: rgba(255, 215, 0, 0.1);
-    border-color: #FFD700;
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
-    outline: none;
-  }
-
-  .carousel-arrow {
-    width: 32px;
-    height: 32px;
-    box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
-  }
-
-  .carousel-arrow:hover {
-    background: rgba(255, 215, 0, 0.1);
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
-  }
-
-  .footer-container {
-    padding: 3rem 2rem;
-    box-shadow: 
-      inset 0 2px 4px rgba(255,255,255,0.1),
-      0 -4px 20px rgba(0,0,0,0.3);
-  }
-
-  .social-icon {
-    width: 36px;
-    height: 36px;
-  }
-
-  .social-icon:hover {
-    background: rgba(255, 215, 0, 0.2);
-    transform: translateY(-3px);
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
-  }
-}
 
 @keyframes metallic-shine {
   0%, 100% { background-position: 0% 50%; }
@@ -635,21 +434,7 @@ body::before {
   animation: shine-pulse 2s ease-in-out infinite;
 }
 
-/* Carousel arrow styles */
-.carousel-arrow {
-  width: 32px;
-  height: 32px;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(10px);
-  border: 1px solid #FFD700;
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
-  transition: all 0.3s ease;
-}
 
-.carousel-arrow:hover {
-  background: rgba(255, 215, 0, 0.1);
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
-}
 
 /* Footer styles */
 .footer-container {
@@ -663,12 +448,12 @@ body::before {
 }
 
 .footer-link {
-  color: #FFD700;
+  color: var(--primary-color);
   transition: all 0.3s ease;
 }
 
 .footer-link:hover {
-  color: #FFC700;
+  color: var(--primary-color-grad1);
   text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
 }
 
@@ -679,7 +464,7 @@ body::before {
   align-items: center;
   justify-content: center;
   background: rgba(255, 215, 0, 0.1);
-  border: 1px solid #FFD700;
+  border: 1px solid var(--primary-color);
   border-radius: 50%;
   transition: all 0.3s ease;
 }
@@ -689,3 +474,110 @@ body::before {
   transform: translateY(-3px);
   box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
 }
+
+
+/* ==============================
+   Gold Ticker Rate Section
+   ============================== */
+
+.gold-rate-ticker {
+  width: 40%;                      /* default: 2/5 */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid rgba(255, 215, 0, 0.3); /* border-gold-400/30 */
+  background: linear-gradient(135deg, #FFD700, #FFC700);
+  box-shadow: inset 0 0 10px rgba(255, 215, 0, 0.4);
+}
+
+.gold-rate-ticker-content {
+  text-align: center;
+  padding: 0 8px;
+}
+
+.gold-rate-ticker-values {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.gold-rate-ticker .label {
+  font-size: 10px;
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 2px;
+}
+
+.gold-rate-ticker .price-per-gram {
+  font-size: 12px;
+  font-weight: 700;
+  color: #000;
+}
+
+.gold-rate-ticker .price-per-ounce {
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* ==============================
+   Gold Ticker Text Section
+   ============================== */
+
+.ticker {
+  width: 60%; /* w-3/5 default */
+  overflow: hidden;
+}
+
+.ticker-content {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: ticker-scroll 25s linear infinite;
+  color: #FFD700;
+  text-shadow: 0 0 6px rgba(255, 215, 0, 0.6);
+}
+
+.ticker-item {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.ticker-item span {
+  margin: 0 16px; /* mx-4 */
+  font-size: 12px; /* text-xs default */
+}
+
+.coin-icon {
+  width: 16px; /* w-4 */
+  height: 16px; /* h-4 */
+  color: #FFD700;
+  filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.8));
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* ==============================
+   Animations
+   ============================== */
+
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.8));
+  }
+  50% {
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 1));
+  }
+}
+
+

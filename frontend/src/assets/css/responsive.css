@@ -1,0 +1,465 @@
+/* =========================================================
+   📱 SECTION 7 — RESPONSIVE & UTILITY OVERRIDES
+   ========================================================= */
+
+/* ----- 7.1 Base Responsive Structure ----- */
+
+/* Large screens (Desktops > 1024px) */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1400px;
+  }
+
+  .section-title {
+    font-size: 2.25rem;
+  }
+
+   .logo-face {
+    width: 42.5px;
+    height: 42.5px;
+    box-shadow: 
+      inset 0 1px 3px rgba(255,255,255,0.6),
+      inset 0 -2px 3px rgba(0,0,0,0.3),
+      0 0 20px rgba(255, 215, 0, 0.8),
+      0 0 40px rgba(255, 215, 0, 0.4);
+  }
+
+  .antenna-arm {
+    width: 4px;
+    height: 20px;
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+  }
+
+  .logo-text-container {
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 12px;
+    box-shadow: inset 0 1px 3px rgba(255,255,255,0.5), inset 0 -2px 3px rgba(0,0,0,0.3), 0 4px 6px rgba(0,0,0,0.3);
+  }
+
+  .logo-icon-container {
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.8));
+  }
+
+  .header-metallic-green {
+    box-shadow: 
+      inset 0 1px 2px rgba(255,255,255,0.1),
+      inset 0 -1px 2px rgba(0,0,0,0.3),
+      0 2px 10px rgba(0,0,0,0.5);
+  }
+
+  .card-gold-glossy {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    box-shadow: 
+      inset 0 1px 2px rgba(255, 255, 255, 0.1),
+      inset 0 -1px 2px rgba(0, 0, 0, 0.1),
+      0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .card-gold-glossy:hover {
+    box-shadow: 
+      inset 0 1px 2px rgba(255, 255, 255, 0.2),
+      inset 0 -1px 2px rgba(0, 0, 0, 0.1),
+      0 0 25px rgba(255, 215, 0, 0.4),
+      0 4px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-4px);
+  }
+
+  .icon-container {
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  .icon-container:hover {
+    transform: scale(1.1);
+  }
+
+  .btn-metallic-gold {
+    padding: 12px 32px;
+    border-radius: 8px;
+    font-size: 16px;
+    box-shadow: 
+      inset 0 2px 4px rgba(255, 255, 255, 0.6),
+      inset 0 -2px 4px rgba(0, 0, 0, 0.3),
+      0 0 20px rgba(255, 215, 0, 0.6),
+      0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .btn-metallic-gold:hover {
+    background-position: 100% 100%;
+    box-shadow: 
+      inset 0 2px 4px rgba(255, 255, 255, 0.8),
+      inset 0 -2px 4px rgba(0, 0, 0, 0.2),
+      0 0 30px rgba(255, 215, 0, 0.8),
+      0 6px 12px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
+  }
+
+  .signin-popup {
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 
+      inset 0 2px 4px rgba(255, 255, 255, 0.1),
+      inset 0 -2px 4px rgba(0, 0, 0, 0.2),
+      0 0 40px rgba(255, 215, 0, 0.3),
+      0 8px 32px rgba(0, 0, 0, 0.5);
+  }
+
+  .signin-input {
+    padding: 12px 16px;
+    font-size: 16px;
+  }
+
+  .signin-input:focus {
+    background: rgba(255, 215, 0, 0.1);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+    outline: none;
+  }
+
+  .carousel-arrow {
+    width: 32px;
+    height: 32px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+  }
+
+  .carousel-arrow:hover {
+    background: rgba(255, 215, 0, 0.1);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+  }
+
+  .footer-container {
+    padding: 3rem 2rem;
+    box-shadow: 
+      inset 0 2px 4px rgba(255,255,255,0.1),
+      0 -4px 20px rgba(0,0,0,0.3);
+  }
+
+  .social-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .social-icon:hover {
+    background: rgba(255, 215, 0, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+  }
+}
+
+/* Medium screens (Tablets ≤ 1024px) */
+@media (max-width: 1024px) {
+  body {
+    background-attachment: scroll; /* smoother on mobile devices */
+  }
+
+  .container {
+    padding: 0 1.2rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .logo-face {
+    width: 38px;
+    height: 38px;
+  }
+
+  .antenna-arm {
+    width: 3.5px;
+    height: 18px;
+  }
+
+  .logo-text-container {
+    padding: 8px 16px;
+    font-size: 16px;
+    border-radius: 10px;
+  }
+
+  .card-gold-glossy {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 1.25rem;
+  }
+
+  .icon-container {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-bottom: 0.875rem;
+  }
+
+  .btn-metallic-gold {
+    padding: 11px 28px;
+    font-size: 15px;
+  }
+
+  .signin-input {
+    padding: 11px 14px;
+  /* Ticker background */
+  .ticker-gold-translucent {
+    background: rgba(255, 215, 0, 0.1);
+  }
+
+  .ticker-gold-opaque {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color-grad1) 50%, var(--primary-color) 100%);
+    opacity: 1;
+  }
+
+  .signin-input::placeholder {
+    color: rgba(255, 215, 0, 0.5);
+  }
+      font-size: 15px;
+    }
+
+  .carousel-arrow {
+    width: 30px;
+    height: 30px;
+  }
+
+  .social-icon {
+    width: 34px;
+    height: 34px;
+  }
+  
+}
+
+/* Small screens (Tablets & large phones ≤ 768px) */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .card-header {
+    font-size: 1.1rem;
+  }
+
+  .signin-input {
+    font-size: 0.95rem;
+    padding: 10px 12px;
+  }
+
+  .logo-face {
+    width: 28px;
+    height: 28px;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .title-gradient {
+    font-size: 1.8rem;
+  }
+
+  .text-center-mobile {
+    text-align: center;
+  }
+}
+
+/* Extra small screens (Phones ≤ 480px) */
+@media (max-width: 480px) {
+  body {
+    background-size: auto;
+  }
+
+  .container {
+    padding: 0 0.8rem;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  .card {
+    padding: 0.8rem;
+    border-radius: 10px;
+  }
+
+  .card-header {
+    font-size: 1rem;
+  }
+
+  .card-content {
+    font-size: 0.9rem;
+  }
+
+  .title-gradient {
+    font-size: 1.5rem;
+  }
+
+  .signin-input {
+    padding: 8px 10px;
+  }
+
+  /* Reduce animation motion on smaller screens */
+  .silk-shimmer {
+    animation-duration: 8s;
+  }
+
+  .glow-pulse {
+    animation-duration: 2s;
+  }
+
+  /* Hide heavy visuals if needed */
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+/* ----- 7.2 Utility Classes for Layout Adjustments ----- */
+
+/* Alignment Utilities */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Padding and Margin Helpers */
+.px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+.py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-4 { margin-top: 1rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-4 { margin-bottom: 1rem; }
+
+/* Text size helpers */
+.text-sm { font-size: 0.9rem; }
+.text-lg { font-size: 1.2rem; }
+.text-xl { font-size: 1.5rem; }
+
+/* Hide/Show for devices */
+.hide-desktop { display: none; }
+@media (max-width: 768px) {
+  .hide-desktop { display: none !important; }
+  .hide-mobile { display: block !important; }
+}
+
+/* =========================================================
+   END OF SECTION 7 — RESPONSIVE & UTILITY OVERRIDES
+   ========================================================= */
+
+/* ==============================
+   Ticker Responsive Adjustments
+   ============================== */
+
+/* Small screens (max-width: 640px) */
+@media (max-width: 640px) {
+  .gold-rate-ticker {
+    width: 30%; /* sm:w-1/5 */
+  }
+
+  .gold-rate-ticker .label {
+    font-size: 9px;
+  }
+
+  .gold-rate-ticker .price-per-gram {
+    font-size: 10px;
+  }
+
+  .gold-rate-ticker .price-per-ounce {
+    font-size: 9px;
+  }
+
+    .ticker {
+    width: 80%; /* sm:w-4/5 */
+  }
+
+  .ticker-item span {
+    font-size: 12px; /* text-xs smaller */
+    margin: 0 12px;
+  }
+
+  .coin-icon {
+    width: 20px; /* sm:w-5 */
+    height: 20px; /* sm:h-5 */
+  }
+}
+
+/* Medium screens (min-width: 641px and max-width: 1024px) */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .gold-rate-ticker {
+    width: 25%;
+  }
+
+  .gold-rate-ticker-values {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .gold-rate-ticker .price-per-gram {
+    font-size: 13px;
+  }
+
+  .gold-rate-ticker .price-per-ounce {
+    font-size: 11px;
+  }
+
+  .ticker {
+    width: 80%;
+  }
+
+  .ticker-item span {
+    font-size: 14px; /* md:text-base */
+  }
+
+  .coin-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Large screens (min-width: 1025px) */
+@media (min-width: 1025px) {
+  .gold-rate-ticker {
+    width: 30%;
+  }
+
+  .gold-rate-ticker-values {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .gold-rate-ticker .price-per-gram {
+    font-size: 14px;
+  }
+
+  .gold-rate-ticker .price-per-ounce {
+    font-size: 12px;
+  }
+
+  .ticker {
+    width: 80%;
+  }
+
+  .ticker-item span {
+    font-size: 16px;
+  }
+
+  .coin-icon {
+    width: 20px;
+    height: 20px;
+  }
+}

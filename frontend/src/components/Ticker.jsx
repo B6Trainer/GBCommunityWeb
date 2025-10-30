@@ -16,7 +16,7 @@ const Ticker = () => {
   return (
     <div className="fixed top-20 left-0 right-0 z-40 border-b border-gold-400/30 gold-glow h-12 flex items-center ticker-gold-translucent">
       {/* Scrolling ticker - takes less space on mobile */}
-      <div className="w-3/5 sm:w-4/5 overflow-hidden">
+      {/* <div className="w-3/5 sm:w-4/5 overflow-hidden">
         <div className="ticker-content flex items-center gold-text">
           {[...tickerMessages, ...tickerMessages].map((message, index) => (
             <div key={index} className="flex items-center whitespace-nowrap">
@@ -25,10 +25,21 @@ const Ticker = () => {
             </div>
           ))}
         </div>
+      </div> */}
+
+         <div className="ticker">
+      <div className="ticker-content">
+        {[...tickerMessages, ...tickerMessages].map((message, index) => (
+          <div key={index} className="ticker-item">
+            <span>{message}</span>
+            <Coins className="coin-icon" />
+          </div>
+        ))}
       </div>
+    </div>
       
       {/* Gold price section - visible on all screens, compact on mobile */}
-      <div className="w-2/5 sm:w-1/5 h-full flex items-center justify-center border-l border-gold-400/30 ticker-gold-opaque">
+      {/* <div className="w-2/5 sm:w-1/5 h-full flex items-center justify-center border-l border-gold-400/30 ticker-gold-opaque">
         <div className="text-center px-2">
           <div className="flex flex-col items-center">
             <span className="text-[10px] sm:text-xs font-medium text-black mb-0.5">Gold Price</span>
@@ -40,7 +51,18 @@ const Ticker = () => {
             </div>
           </div>
         </div>
+      </div> */}
+
+      <div className="gold-rate-ticker">
+        <div className="gold-rate-ticker-content">
+          <div className="gold-rate-ticker-values">
+            <span className="label">Gold Price</span>
+            <div className="price-per-gram">${goldPriceGram}/g</div>
+            <div className="price-per-ounce">${goldPriceOz}/oz</div>
+          </div>
+        </div>
       </div>
+
       <style>{`
         .ticker-content {
           animation: scroll 15s linear infinite;

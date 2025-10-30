@@ -142,7 +142,7 @@ const Header = ({ onLoginClick }) => {
                             key={subindex}
                             to={subitem.path}
                             onClick={() => setIsMobileMenuOpen(false)}
-                            className="block gold-text hover:text-gold-300 transition-smooth py-2"
+                            className="block text-left gold-text hover:text-gold-300 transition-smooth py-2"
                           >
                             {subitem.name}
                           </Link>
@@ -154,7 +154,7 @@ const Header = ({ onLoginClick }) => {
                   <Link
                     to={item.path}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block gold-text font-semibold hover:text-gold-300 transition-smooth py-2 px-2"
+                    className="block text-left gold-text font-semibold hover:text-gold-300 transition-smooth py-2 px-2"
                   >
                     {item.name}
                   </Link>
