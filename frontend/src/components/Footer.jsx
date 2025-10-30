@@ -118,16 +118,16 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start space-x-2 text-sm text-gold-500">
                 <Mail className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span>support@goldbucks.com</span>
+                <span>support@mygoldbucks.com</span>
               </li>
-              <li className="flex items-start space-x-2 text-sm text-gold-500">
+              {/* <li className="flex items-start space-x-2 text-sm text-gold-500">
                 <Phone className="w-4 h-4 mt-0.5 flex-shrink-0" />
                 <span>+1 (555) 123-4567</span>
               </li>
               <li className="flex items-start space-x-2 text-sm text-gold-500">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
                 <span>123 Blockchain St<br />San Francisco, CA 94102</span>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

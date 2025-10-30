@@ -1,0 +1,104 @@
+.logo-icon-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: fit-content;
+  padding-top: 14px; /* creates space above for antenna */
+}
+
+/* Antenna sits just above the square face */
+.antenna-wrapper {
+  position: absolute;
+  top: 2px; /* now tightly above face */
+  left: 50%;
+  transform: translateX(-50%) translateY(-80%);
+  display: flex;
+  justify-content: center;
+  width: 24px;
+  height: 10px;
+  z-index: 10;
+}
+
+.antenna-arm {
+  width: 2px;
+  height: 10px;
+  background: linear-gradient(to bottom, #FFD700, #B8860B);
+  border-radius: 2px;
+}
+
+.left-arm {
+  transform: rotate(-40deg);
+  transform-origin: bottom center;
+  margin-right: 4px;
+}
+
+.right-arm {
+  transform: rotate(40deg);
+  transform-origin: bottom center;
+}
+
+/* Robot face */
+.logo-face {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #FFD700 0%, #FFC700 25%, #FFB000 50%, #FFC700 75%, #FFD700 100%);
+  box-shadow:
+    inset 0 1px 2px rgba(255,255,255,0.6),
+    inset 0 -1px 2px rgba(0,0,0,0.3),
+    0 0 15px rgba(255, 215, 0, 0.6),
+    0 0 30px rgba(255, 215, 0, 0.3);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Eyes */
+.eyes {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.eye {
+  width: 6px;
+  height: 6px;
+  background: black;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.eye.closed {
+  height: 2px;
+}
+
+/* Smile */
+.smile {
+  margin-top: auto;
+  margin-bottom: 4px;
+  width: 24px;
+  height: 12px;
+}
+
+.smile svg {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}

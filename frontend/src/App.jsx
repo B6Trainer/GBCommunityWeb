@@ -23,6 +23,8 @@ import SwapSystem from './pages/SwapSystem';
 import Testimonials from './pages/Testimonials';
 import Contact from './pages/Contact';
 import './App.css';
+import NewFooter from './components/NewFooter';
+import SleekFooter from './components/SleekFooter';
 
 function App() {
   const [showLogin, setShowLogin] = useState(false);
@@ -55,7 +57,7 @@ function App() {
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
-        <Footer />
+        <SleekFooter/>
         </div>
       </div>
     </Router>

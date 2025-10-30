@@ -7,6 +7,7 @@ import Benefits from './Benefits';
 
 import "@/assets/css/sections.css";
 import Joining from './Joining';
+import NewFooter from '@/components/NewFooter';
 
 const Home = () => {
 
@@ -41,6 +42,10 @@ const Home = () => {
   ];
 
   return (
+    <>
+    
+    
+    
     <div className="pt-32 min-h-screen" key="home-page">
       {/* Hero Carousel Section */}
       <HeroCarousel sectionid={"hero-section"}/>
@@ -73,8 +78,12 @@ const Home = () => {
           </button>
         </motion.div>
       </section>
-      
+
     </div>
+
+    <NewFooter/>
+
+    </>
   );
 };
 

@@ -1,5 +1,7 @@
 import { X } from 'lucide-react';
 import { useState } from 'react';
+import LogoIcon from './LogoIcon';
+import SmileyIcon from './SmileyIcon';
 
 const LoginPopup = ({ onClose }) => {
   const [username, setUsername] = useState('');
@@ -17,7 +19,7 @@ const LoginPopup = ({ onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm animate-fade-in" data-testid="login-popup">
+    <div className="glass-morphism fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm animate-fade-in" data-testid="login-popup">
       <div className="relative w-full max-w-md mx-4 signin-popup rounded-2xl p-8 animate-scale-in">
         <button
           onClick={onClose}
@@ -27,6 +29,8 @@ const LoginPopup = ({ onClose }) => {
           <X size={24} />
         </button>
 
+        <SmileyIcon />
+        
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold gold-embossed mb-2">Welcome Back</h2>
           <p className="text-gold-500">Login to your Gold Bucks account</p>

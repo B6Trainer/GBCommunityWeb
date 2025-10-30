@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 const AnimatedLogo = () => {
-  const text = 'GOLD BUCKS';
+  const logoname = 'GOLD BUCKS';
   const [waveOffset, setWaveOffset] = useState(0);
 
   useEffect(() => {
@@ -14,8 +14,8 @@ const AnimatedLogo = () => {
 
   return (
     <div className="logo-text-container">
-      <div className="font-bold tracking-wider flex">
-        {text.split('').map((letter, index) => (
+      <div className="font-bold tracking-wider flex justify-center">
+        {logoname.split('').map((letter, index) => (
           <span
             key={index}
             className="inline-block text-black transition-all duration-300"

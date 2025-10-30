@@ -5,6 +5,7 @@ import { UserPlus, Wallet, GitBranch, Coins } from 'lucide-react';
 
 
 import "@/assets/css/sections.css";
+import SectionHeading from './SectionHeading';
 
 const Joining = (props) => {
   
@@ -41,17 +42,43 @@ const Joining = (props) => {
     
       {/* How to Join Section */}
       <section className="section-container" data-testid={sectionid}>
-        <motion.h2
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-4xl font-bold gold-embossed text-center mb-12"
-        >
-          How to Join
-        </motion.h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <SectionHeading heading={"How to Join"}/>
+
+      <div className="section-grid">
+        {steps.map((step, index) => {
+          const Icon = step.icon;
+          return (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: index * 0.15, duration: 0.5 }}
+              viewport={{ once: true }}
+              className="section-step relative"
+            >
+              <div className="section-glass-card h-full">
+                <div className="step-number">{index + 1}</div>
+
+                <div className="step-icon-wrapper">
+                  <div className="step-icon">
+                    <Icon className="step-icon-inner" />
+                  </div>
+                </div>
+
+                <h3 className="section-glass-card-title gold-text text-center">{step.title}</h3>
+                <p className="section-glass-card-description text-center">{step.description}</p>
+              </div>
+
+              {index < steps.length - 1 && <div className="step-connector" />}
+            </motion.div>
+          );
+        })}
+      </div>
+
+
+
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
@@ -81,7 +108,7 @@ const Joining = (props) => {
               </motion.div>
             );
           })}
-        </div>
+        </div> */}
       </section>
 
     </>
