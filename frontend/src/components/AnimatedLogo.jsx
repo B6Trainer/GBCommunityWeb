@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 const AnimatedLogo = () => {
-  const text = 'GOLD BUCKS';
+  const logoname = 'GOLD BUCKS';
   const [waveOffset, setWaveOffset] = useState(0);
 
   useEffect(() => {
@@ -13,13 +13,9 @@ const AnimatedLogo = () => {
   }, []);
 
   return (
-    <div className="px-4 py-2 rounded-xl" 
-         style={{
-           background: 'linear-gradient(135deg, #FFD700 0%, #FFC700 25%, #FFB000 50%, #FFC700 75%, #FFD700 100%)',
-           boxShadow: 'inset 0 1px 3px rgba(255,255,255,0.5), inset 0 -1px 3px rgba(0,0,0,0.3), 0 4px 6px rgba(0,0,0,0.3)'
-         }}>
-      <div className="text-xl font-bold tracking-wider flex">
-        {text.split('').map((letter, index) => (
+    <div className="logo-text-container">
+      <div className="font-bold tracking-wider flex justify-center">
+        {logoname.split('').map((letter, index) => (
           <span
             key={index}
             className="inline-block text-black transition-all duration-300"

@@ -1,5 +1,7 @@
 import { X } from 'lucide-react';
 import { useState } from 'react';
+import LogoIcon from './LogoIcon';
+import SmileyIcon from './SmileyIcon';
 
 const LoginPopup = ({ onClose }) => {
   const [username, setUsername] = useState('');
@@ -17,8 +19,8 @@ const LoginPopup = ({ onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm animate-fade-in" data-testid="login-popup">
-      <div className="relative w-full max-w-md mx-4 glass-morphism border border-gold-400/30 rounded-2xl p-8 gold-glow animate-scale-in">
+    <div className="glass-morphism fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm animate-fade-in" data-testid="login-popup">
+      <div className="relative w-full max-w-md mx-4 signin-popup rounded-2xl p-8 animate-scale-in">
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-gold-400 hover:text-gold-300 transition-smooth"
@@ -27,6 +29,8 @@ const LoginPopup = ({ onClose }) => {
           <X size={24} />
         </button>
 
+        <SmileyIcon />
+        
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold gold-embossed mb-2">Welcome Back</h2>
           <p className="text-gold-500">Login to your Gold Bucks account</p>
@@ -41,7 +45,7 @@ const LoginPopup = ({ onClose }) => {
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              className="w-full px-4 py-3 glass-morphism border border-gold-400/30 rounded-lg gold-text focus:outline-none focus:border-gold-400 transition-smooth"
+              className="w-full px-4 py-3 signin-input rounded-lg"
               placeholder="Enter your username"
               data-testid="username-input"
             />
@@ -55,7 +59,7 @@ const LoginPopup = ({ onClose }) => {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-3 glass-morphism border border-gold-400/30 rounded-lg gold-text focus:outline-none focus:border-gold-400 transition-smooth"
+              className="w-full px-4 py-3 signin-input rounded-lg"
               placeholder="Enter your password"
               data-testid="password-input"
             />
@@ -76,7 +80,7 @@ const LoginPopup = ({ onClose }) => {
               <div className="w-full border-t border-gold-400/30"></div>
             </div>
             <div className="relative flex justify-center text-sm">
-              <span className="px-2 glass-morphism text-gold-500">Or continue with</span>
+              <span className="px-2 signin-popup text-gold-500">Or continue with</span>
             </div>
           </div>
 

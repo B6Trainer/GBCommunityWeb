@@ -1,0 +1,137 @@
+.footer-container {
+  
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 215, 0, 0.15);
+  
+}
+
+.footer-inner {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+/* Base layout*/
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-brand-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+
+/* Footer Section Headings */
+.footer-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--gold-color, #ffd700);
+  margin-bottom: 1rem;
+}
+
+/* Footer Lists */
+.footer-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-link {
+  color: #c5a945;
+  font-size: 0.875rem;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #ffd700;
+}
+
+/* Contact Info */
+.footer-contact {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-contact li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #c5a945;
+}
+
+.footer-icon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Divider and Bottom Section */
+.footer-divider {
+  border-top: 1px solid rgba(255, 215, 0, 0.2);
+  margin: 1rem 0;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #c5a945;
+}
+
+.footer-legal {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* On larger screens, 5 columns */
+@media (min-width: 769px) {
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Compact and clean on mobile */
+@media (max-width: 768px) {
+  .footer-inner {
+    padding: 2rem 1rem;
+  }
+
+  .footer-grid {
+    gap: 1.25rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-heading {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-list li,
+  .footer-contact li {
+    font-size: 0.8rem;
+  }
+
+  .footer-legal {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    gap: 0.5rem;
+  }
+}

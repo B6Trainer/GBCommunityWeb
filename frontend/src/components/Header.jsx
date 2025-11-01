@@ -103,7 +103,13 @@ const Header = ({ onLoginClick }) => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div 
-          className="lg:hidden fixed top-20 right-0 w-[40%] h-[60vh] glass-morphism border-l border-b border-gold-400 gold-glow rounded-bl-3xl overflow-y-auto animate-slide-in"
+          className="lg:hidden fixed top-20 right-4 glass-morphism border border-gold-400 gold-glow rounded-2xl overflow-y-auto animate-slide-in"
+          style={{
+            maxWidth: '80vw',
+            width: 'fit-content',
+            minWidth: '200px',
+            maxHeight: '70vh'
+          }}
           data-testid="mobile-menu"
         >
           <nav className="p-6 space-y-4">
@@ -119,24 +125,24 @@ const Header = ({ onLoginClick }) => {
             </button>
             
             {menuItems.map((item, index) => (
-              <div key={index}>
+              <div key={index} className="w-full">
                 {item.submenu ? (
                   <div>
                     <button
                       onClick={() => setOpenSubmenu(openSubmenu === index ? null : index)}
-                      className="w-full text-left gold-text font-semibold hover:text-gold-300 transition-smooth flex items-center justify-between py-2"
+                      className="w-full text-left gold-text font-semibold hover:text-gold-300 transition-smooth flex items-center justify-between py-2 px-2"
                     >
-                      {item.name}
+                      <span>{item.name}</span>
                       <ChevronDown className={`w-4 h-4 transition-transform ${openSubmenu === index ? 'rotate-180' : ''}`} />
                     </button>
                     {openSubmenu === index && (
-                      <div className="ml-4 mt-2 space-y-2">
+                      <div className="ml-6 mt-2 space-y-2 border-l-2 border-gold-400/30 pl-3">
                         {item.submenu.map((subitem, subindex) => (
                           <Link
                             key={subindex}
                             to={subitem.path}
                             onClick={() => setIsMobileMenuOpen(false)}
-                            className="block gold-text hover:text-gold-300 transition-smooth py-2 pl-2 border-l-2 border-gold-400/30"
+                            className="block text-left gold-text hover:text-gold-300 transition-smooth py-2"
                           >
                             {subitem.name}
                           </Link>
@@ -148,7 +154,7 @@ const Header = ({ onLoginClick }) => {
                   <Link
                     to={item.path}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block gold-text font-semibold hover:text-gold-300 transition-smooth py-2"
+                    className="block text-left gold-text font-semibold hover:text-gold-300 transition-smooth py-2 px-2"
                   >
                     {item.name}
                   </Link>

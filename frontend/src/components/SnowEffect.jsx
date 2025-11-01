@@ -19,7 +19,7 @@ const SnowEffect = () => {
       snowflakes.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        radius: Math.random() * 3 + 1,
+        radius: Math.random() * 1 + 1,
         speed: Math.random() * 0.3 + 0.2, // Reduced from 1 + 0.5 to 0.3 + 0.2
         drift: Math.random() * 0.3 - 0.15, // Reduced from 0.5 - 0.25
       });

@@ -1,0 +1,220 @@
+/* ======================================
+   HERO CAROUSEL SECTION
+   ====================================== */
+
+.hero-carousel-wrapper {
+  width: 100%;
+}
+
+.hero-carousel {
+  max-width: 1280px; /* max-w-7xl */
+  margin: 0 auto;
+  padding: 2.5rem 1rem 5rem; /* pt-10 pb-20 */
+  margin-bottom: 5rem; /* mb-20 */
+}
+
+.carousel-container {
+  position: relative;
+}
+
+/* Slick Dots Styling */
+.carousel-container .slick-dots {
+  bottom: -40px;
+}
+
+.carousel-container .slick-dots li button:before {
+  color: #FFD700;
+  font-size: 10px;
+  opacity: 0.6;
+}
+
+.carousel-container .slick-dots li.slick-active button:before {
+  color: #FFD700;
+  opacity: 1;
+}
+
+/* Slide Spacing */
+.carousel-container .slick-slide > div {
+  margin: 0 8px;
+}
+
+/* Carousel Slide */
+.carousel-slide {
+  padding: 0 4px;
+}
+
+/* Individual Item */
+.carousel-item {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.carousel-item:hover {
+  transform: scale(1.05);
+}
+
+/* Glassmorphism Border */
+.carousel-image-wrapper {
+  aspect-ratio: 16 / 9; /* aspect-video */
+  overflow: hidden;
+  border-radius: 1rem; /* rounded-2xl */
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Carousel arrow styles */
+.carousel-arrow {
+  width: 32px;
+  height: 32px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--primary-color);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.carousel-arrow:hover {
+  background: rgba(255, 215, 0, 0.1);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+}
+
+/* Carousel arrows - Mobile */
+.carousel-arrow {
+  width: 28px;
+  height: 28px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--primary-color);
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+  transition: all 0.3s ease;
+}
+/* ======================================
+   IMAGE POPUP (MODAL)
+   ====================================== */
+
+.image-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(6px);
+  padding: 1rem;
+}
+
+.image-popup-content {
+  position: relative;
+  width: 80%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-popup-close {
+  position: absolute;
+  top: -3rem;
+  right: 0;
+  color: #FFD700;
+  transition: color 0.3s ease;
+  z-index: 10;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.image-popup-close:hover {
+  color: #FFE066;
+}
+
+.image-popup-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 1rem;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
+  animation: gold-glow 3s ease-in-out infinite;
+}
+
+/* ======================================
+   ANIMATIONS
+   ====================================== */
+
+@keyframes gold-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.7);
+  }
+}
+
+/* ======================================
+   RESPONSIVE
+   ====================================== */
+
+@media (max-width: 640px) {
+  .hero-carousel {
+    padding: 1.5rem 1rem 3rem;
+  }
+
+  .carousel-image-wrapper {
+    border-radius: 0.75rem;
+  }
+
+  .image-popup-content {
+    width: 90%;
+    height: 70%;
+  }
+
+  .carousel-arrow {
+    width: 22px;
+    height: 22px;  
+    backdrop-filter: blur(8px);  
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);  
+  }
+
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .hero-carousel {
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .image-popup-content {
+    width: 85%;
+    height: 75%;
+  }
+
+  .carousel-arrow {
+    width: 26px;
+    height: 26px;  
+    backdrop-filter: blur(8px);  
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);  
+  }
+}
+
+@media (min-width: 1025px) {
+  .image-popup-content {
+    width: 80%;
+    height: 80%;
+  }
+
+  .carousel-arrow {
+    width: 28px;
+    height: 28px;  
+    backdrop-filter: blur(8px);  
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);  
+  }
+}

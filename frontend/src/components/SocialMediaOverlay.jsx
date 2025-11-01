@@ -5,13 +5,14 @@ const SocialMediaOverlay = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [isExpanded, setIsExpanded] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const sectionid="social-media-overlay";
 
   useEffect(() => {
     if (isHovered) return; // Don't hide when hovered
     
     const timer = setInterval(() => {
       setIsVisible((prev) => !prev);
-    }, isVisible ? 5000 : 10000);
+    }, isVisible ? 20000 : 5000);
 
     return () => clearInterval(timer);
   }, [isVisible, isHovered]);
@@ -22,7 +23,7 @@ const SocialMediaOverlay = () => {
     { icon: Instagram, name: 'Instagram', link: '#', color: '#E4405F', hoverGlow: '0 0 15px #E4405F' },
     { icon: Linkedin, name: 'LinkedIn', link: '#', color: '#0A66C2', hoverGlow: '0 0 15px #0A66C2' },
     { icon: Youtube, name: 'YouTube', link: '#', color: '#FF0000', hoverGlow: '0 0 15px #FF0000' },
-    { icon: MessageCircle, name: 'Telegram', link: '#', color: '#26A5E4', hoverGlow: '0 0 15px #26A5E4' },
+    // { icon: MessageCircle, name: 'Telegram', link: '#', color: '#26A5E4', hoverGlow: '0 0 15px #26A5E4' },
   ];
 
   return (
@@ -38,7 +39,7 @@ const SocialMediaOverlay = () => {
         setIsExpanded(false);
         setIsHovered(false);
       }}
-      data-testid="social-media-overlay"
+      data-testid={sectionid}
     >
       <div className="glass-morphism border-l border-t border-b border-gold-400/30 rounded-l-2xl gold-glow p-2">
         <div className="flex flex-col space-y-3">
