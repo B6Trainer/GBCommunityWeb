@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import "@/assets/css/SmileyIcon.css";
+import "@/assets/css/smileyicon.css";
 const SmileyIcon = () => {
   const [eyesClosed, setEyesClosed] = useState(false);
 
