@@ -338,11 +338,15 @@
   border-top: 2px solid rgba(255, 215, 0, 0.4);
 }
 
-/* Mobile Responsive - Stack table on small screens */
+/* Mobile Responsive - Same layout for all screens */
 @media (max-width: 768px) {
+  .calculator-container {
+    padding: 0.75rem;
+  }
+
   .calc-input-section,
   .calc-breakdown-section {
-    padding: 1.25rem;
+    padding: 1rem;
     border-radius: 1rem;
   }
 
@@ -351,40 +355,58 @@
     font-size: 1.25rem;
   }
 
-  .calc-inputs-grid {
-    flex-direction: column;
-    gap: 1rem;
+  .calc-row-1,
+  .calc-row-2 {
+    gap: 0.5rem;
+  }
+
+  .calc-input-label {
+    font-size: 0.7rem;
   }
 
   .calc-input-field,
-  .calc-select-field {
-    width: 100%;
+  .calc-display-value {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.85rem;
   }
 
-  .calc-summary-grid {
-    grid-template-columns: 1fr;
-    gap: 0.75rem;
+  .calc-equals {
+    font-size: 1.2rem;
   }
 
-  .calc-summary-card {
-    padding: 1.25rem;
+  .calc-summary-row-1 {
+    gap: 0.5rem;
   }
 
-  .calc-icon-wrapper {
-    width: 50px;
-    height: 50px;
+  .calc-summary-card-sleek {
+    padding: 0.6rem;
+    border-radius: 0.6rem;
   }
 
-  .calc-icon {
-    width: 28px;
-    height: 28px;
+  .calc-icon-wrapper-small {
+    width: 35px;
+    height: 35px;
+    margin-bottom: 0.4rem;
+  }
+
+  .calc-icon-small {
+    width: 18px;
+    height: 18px;
+  }
+
+  .calc-summary-label {
+    font-size: 0.65rem;
   }
 
   .calc-summary-value {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 
-  /* Mobile table optimization - reduce font size and padding */
+  .calc-summary-value-large {
+    font-size: 1.25rem;
+  }
+
+  /* Mobile table optimization */
   .calc-table th,
   .calc-table td {
     padding: 0.5rem 0.25rem;
@@ -397,20 +419,15 @@
 }
 
 @media (max-width: 480px) {
-  .calc-input-section,
-  .calc-breakdown-section {
-    padding: 1rem;
-  }
-
   .calc-summary-value {
-    font-size: 1.25rem;
+    font-size: 0.9rem;
   }
 
-  .calc-summary-card.total-earnings .calc-summary-value {
-    font-size: 1.5rem;
+  .calc-summary-value-large {
+    font-size: 1.1rem;
   }
 
-  /* Extra small screens - even more compact */
+  /* Extra small screens */
   .calc-table th,
   .calc-table td {
     padding: 0.4rem 0.2rem;
