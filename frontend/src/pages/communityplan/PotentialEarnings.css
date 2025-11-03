@@ -222,11 +222,15 @@
   background-clip: text;
 }
 
-/* Mobile Responsive */
+/* Mobile Responsive - Same layout for all screens */
 @media (max-width: 768px) {
+  .potential-earnings-container {
+    padding: 0.75rem;
+  }
+
   .pe-breakdown-section,
   .pe-summary-section {
-    padding: 1.25rem;
+    padding: 1rem;
     border-radius: 1rem;
   }
 
@@ -235,31 +239,36 @@
     font-size: 1.25rem;
   }
 
-  .pe-earning-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+  .pe-summary-row-1 {
+    gap: 0.5rem;
   }
 
-  .pe-earning-card {
-    padding: 1.5rem;
+  .pe-earning-card-sleek {
+    padding: 0.6rem;
+    border-radius: 0.6rem;
   }
 
-  .pe-icon-wrapper {
-    width: 60px;
-    height: 60px;
+  .pe-icon-wrapper-small {
+    width: 35px;
+    height: 35px;
+    margin-bottom: 0.4rem;
   }
 
-  .pe-icon {
-    width: 30px;
-    height: 30px;
+  .pe-icon-small {
+    width: 18px;
+    height: 18px;
+  }
+
+  .pe-earning-label {
+    font-size: 0.65rem;
   }
 
   .pe-earning-value {
-    font-size: 1.75rem;
+    font-size: 1rem;
   }
 
-  .pe-earning-card.total .pe-earning-value {
-    font-size: 2rem;
+  .pe-earning-value-large {
+    font-size: 1.25rem;
   }
 
   /* Mobile table optimization */
@@ -275,17 +284,12 @@
 }
 
 @media (max-width: 480px) {
-  .pe-breakdown-section,
-  .pe-summary-section {
-    padding: 1rem;
-  }
-
   .pe-earning-value {
-    font-size: 1.5rem;
+    font-size: 0.9rem;
   }
 
-  .pe-earning-card.total .pe-earning-value {
-    font-size: 1.75rem;
+  .pe-earning-value-large {
+    font-size: 1.1rem;
   }
 
   /* Extra small screens */
