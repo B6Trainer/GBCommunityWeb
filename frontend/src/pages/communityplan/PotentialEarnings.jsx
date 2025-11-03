@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { TrendingUp, Gift, Coins } from 'lucide-react';
+import { TrendingUp, Gift, Coins, ChevronDown, ChevronUp } from 'lucide-react';
 import './PotentialEarnings.css';
 
 const PotentialEarnings = () => {
   
-  
+  const [showBreakdown, setShowBreakdown] = useState(true); // Toggle breakdown table
   const totalSlotValue=19430;
   const upgradeBonusPercentage=0.5;
   
