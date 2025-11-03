@@ -1,0 +1,429 @@
+/* ========================================
+   Potential Earnings Component Styles
+   Gold-themed earnings display with animations
+   ======================================== */
+
+/* Container */
+.potential-earnings-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Section 1: Breakdown Table */
+.pe-breakdown-section {
+  background: linear-gradient(135deg, 
+    rgba(255, 215, 0, 0.08) 0%,
+    rgba(255, 199, 0, 0.05) 50%,
+    rgba(255, 215, 0, 0.08) 100%
+  );
+  border: 2px solid rgba(255, 215, 0, 0.25);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.pe-section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #FFD700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-shadow: 0 2px 10px rgba(255, 215, 0, 0.5);
+}
+
+/* Mobile-First Responsive Table */
+.pe-table-container {
+  width: 100%;
+  overflow-x: visible;
+}
+
+.pe-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.pe-table thead {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.25), rgba(255, 176, 0, 0.2));
+}
+
+.pe-table th {
+  padding: 1rem 0.75rem;
+  text-align: right;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: #FFD700;
+  border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pe-table th:first-child {
+  text-align: left;
+}
+
+.pe-table tbody tr {
+  transition: background 0.3s ease;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.pe-table tbody tr:hover {
+  background: rgba(255, 215, 0, 0.08);
+}
+
+.pe-table td {
+  padding: 0.875rem 0.75rem;
+  text-align: right;
+  font-size: 0.875rem;
+  color: rgba(255, 215, 0, 0.9);
+}
+
+.pe-table td:first-child {
+  text-align: left;
+  font-weight: 600;
+  color: #FFD700;
+}
+
+.pe-table tfoot {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 176, 0, 0.15));
+  font-weight: 700;
+}
+
+.pe-table tfoot td {
+  padding: 1rem 0.75rem;
+  color: #FFD700;
+  border-top: 2px solid rgba(255, 215, 0, 0.4);
+}
+
+/* Section 2: Summary with Earning Animations */
+.pe-summary-section {
+  background: linear-gradient(135deg, 
+    rgba(255, 215, 0, 0.12) 0%,
+    rgba(255, 199, 0, 0.08) 50%,
+    rgba(255, 215, 0, 0.12) 100%
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.pe-summary-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.08) 0%, transparent 70%);
+  animation: rotate-bg 10s linear infinite;
+}
+
+@keyframes rotate-bg {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.pe-summary-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #FFD700;
+  margin-bottom: 2rem;
+  text-align: center;
+  text-shadow: 0 2px 10px rgba(255, 215, 0, 0.5);
+  position: relative;
+  z-index: 1;
+}
+
+/* Earning Cards Grid */
+.pe-earning-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Animated Earning Card */
+.pe-earning-card {
+  background: linear-gradient(135deg,
+    rgba(255, 215, 0, 0.18) 0%,
+    rgba(255, 199, 0, 0.12) 50%,
+    rgba(255, 176, 0, 0.18) 100%
+  );
+  border: 2px solid rgba(255, 215, 0, 0.4);
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.pe-earning-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #FFD700, #FFC700, #FFB000);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.pe-earning-card:hover {
+  transform: translateY(-10px) scale(1.04);
+  border-color: rgba(255, 215, 0, 0.7);
+  box-shadow: 0 20px 50px rgba(255, 215, 0, 0.5);
+}
+
+.pe-earning-card:hover::before {
+  opacity: 1;
+}
+
+/* Total Earnings Card - Special Styling */
+.pe-earning-card.total {
+  background: linear-gradient(135deg,
+    rgba(255, 215, 0, 0.25) 0%,
+    rgba(255, 199, 0, 0.18) 50%,
+    rgba(255, 176, 0, 0.25) 100%
+  );
+  border: 3px solid rgba(255, 215, 0, 0.6);
+  box-shadow: 0 10px 40px rgba(255, 215, 0, 0.3);
+}
+
+/* Animated Icon with Earnings */
+.pe-icon-wrapper {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.35), rgba(255, 176, 0, 0.25));
+  border-radius: 50%;
+  border: 3px solid rgba(255, 215, 0, 0.6);
+  position: relative;
+  animation: earning-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes earning-pulse {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 215, 0, 1);
+    transform: scale(1.08);
+  }
+}
+
+/* Money coins animation */
+.pe-icon-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: #FFD700;
+  border-right-color: #FFD700;
+  animation: coin-rotate 3s linear infinite;
+}
+
+@keyframes coin-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.pe-icon {
+  width: 36px;
+  height: 36px;
+  color: #FFD700;
+  filter: drop-shadow(0 0 12px rgba(255, 215, 0, 1));
+  animation: bounce-icon 2s ease-in-out infinite;
+}
+
+@keyframes bounce-icon {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-5px) rotate(-5deg);
+  }
+  75% {
+    transform: translateY(-5px) rotate(5deg);
+  }
+}
+
+.pe-earning-label {
+  font-size: 0.875rem;
+  color: rgba(255, 215, 0, 0.8);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 600;
+}
+
+.pe-earning-value {
+  font-size: 2rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #FFD700 0%, #FFC700 50%, #FFB000 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  display: inline-block;
+}
+
+.pe-earning-value::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #FFD700, transparent);
+  transition: width 0.4s ease;
+}
+
+.pe-earning-card:hover .pe-earning-value::after {
+  width: 100%;
+}
+
+/* Special animation for total earnings */
+.pe-earning-card.total .pe-earning-value {
+  font-size: 2.5rem;
+  animation: value-shimmer 3s ease-in-out infinite;
+}
+
+@keyframes value-shimmer {
+  0%, 100% {
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.9);
+  }
+}
+
+/* Currency symbol animation */
+.pe-earning-value .currency {
+  display: inline-block;
+  animation: currency-float 2s ease-in-out infinite;
+}
+
+@keyframes currency-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .pe-breakdown-section,
+  .pe-summary-section {
+    padding: 1.25rem;
+    border-radius: 1rem;
+  }
+
+  .pe-section-title,
+  .pe-summary-title {
+    font-size: 1.25rem;
+  }
+
+  .pe-earning-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .pe-earning-card {
+    padding: 1.5rem;
+  }
+
+  .pe-icon-wrapper {
+    width: 60px;
+    height: 60px;
+  }
+
+  .pe-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .pe-earning-value {
+    font-size: 1.75rem;
+  }
+
+  .pe-earning-card.total .pe-earning-value {
+    font-size: 2rem;
+  }
+
+  /* Mobile table optimization */
+  .pe-table th,
+  .pe-table td {
+    padding: 0.5rem 0.25rem;
+    font-size: 0.7rem;
+  }
+
+  .pe-table th {
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pe-breakdown-section,
+  .pe-summary-section {
+    padding: 1rem;
+  }
+
+  .pe-earning-value {
+    font-size: 1.5rem;
+  }
+
+  .pe-earning-card.total .pe-earning-value {
+    font-size: 1.75rem;
+  }
+
+  /* Extra small screens */
+  .pe-table th,
+  .pe-table td {
+    padding: 0.4rem 0.2rem;
+    font-size: 0.65rem;
+  }
+
+  .pe-table th {
+    font-size: 0.6rem;
+  }
+}
+
+/* Ensure no horizontal scroll */
+.potential-earnings-container {
+  overflow-x: hidden;
+}
+
+.pe-table-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar but keep functionality */
+.pe-table-container::-webkit-scrollbar {
+  display: none;
+}
+
+.pe-table-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
