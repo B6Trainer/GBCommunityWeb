@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { DollarSign, TrendingUp, Gift, Sparkles } from 'lucide-react';
+import './Calculator.css';
 
 const Calculator = () => {
   // === INPUT STATES ===
