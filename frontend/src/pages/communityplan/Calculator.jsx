@@ -215,6 +215,9 @@ const Calculator = () => {
           </table>
         </div>
       </div>
+      
+      {/* Divider */}
+      <div className="calc-divider"></div>
     </div>
   );
 };
