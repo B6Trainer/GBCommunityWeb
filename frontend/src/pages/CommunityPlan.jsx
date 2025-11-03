@@ -19,6 +19,8 @@ import {
   Calculator as CalcIcon,
   Coins
 } from 'lucide-react';
+import Calculator from './communityplan/Calculator';
+import PotentialEarnings from './communityplan/PotentialEarnings';
 
 const CommunityPlan = () => {
   const [activeTab, setActiveTab] = useState('home');
@@ -186,7 +188,7 @@ const CommunityPlan = () => {
   const renderHomeContent = () => (
     <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
       <motion.section variants={fadeInUp} className="cp-section-narrow">
-        <h2 className="text-3xl font-bold text-center mb-8 gold-embossed">Introducing Community Plan</h2>
+        <h2 className="text-3xl font-bold text-center mb-8 gold-embossed">The Community Plan</h2>
         <div className="cp-card max-w-4xl mx-auto text-center">
           <div className="cp-earning-animation mb-6">
             <motion.div
@@ -197,8 +199,8 @@ const CommunityPlan = () => {
               <TrendingUp className="w-24 h-24 text-gold-400 mx-auto" />
             </motion.div>
           </div>
-          <h3 className="text-2xl font-bold text-gold-400 mb-4">Grow Your Wealth with Community</h3>
-          <p className="text-gold-500 text-lg">Watch your earnings multiply as your community expands. Every member contributes to collective growth.</p>
+          <h3 className="text-2xl font-bold text-gold-400 mb-3">Grow Your Wealth with Community</h3>
+          <p className="text-gold-300 text-lg">Watch your earnings multiply as your community expands. Every member contributes to collective growth.</p>
         </div>
       </motion.section>
 
@@ -634,12 +636,15 @@ const CommunityPlan = () => {
     <motion.div initial="hidden" animate="visible" variants={fadeInUp} className="cp-section">
       <h2 className="text-3xl font-bold text-center mb-8 gold-embossed">Earnings Calculator</h2>
       <div className="cp-card max-w-2xl mx-auto text-center py-16">
-        <motion.div animate={{ rotate: 360 }} transition={{ duration: 2, repeat: Infinity, ease: "linear" }} className="inline-block mb-6">
+        {/* <motion.div animate={{ rotate: 360 }} transition={{ duration: 2, repeat: Infinity, ease: "linear" }} className="inline-block mb-6">
           <CalcIcon className="w-24 h-24 text-gold-400" />
         </motion.div>
         <h3 className="text-4xl font-bold text-gold-300 mb-4">Coming Soon</h3>
         <p className="text-gold-500 text-lg mb-4">Calculate your potential earnings with our interactive calculator</p>
-        <p className="text-gold-500/70 text-sm">This powerful tool will help you project your income based on various scenarios</p>
+        <p className="text-gold-500/70 text-sm">This powerful tool will help you project your income based on various scenarios</p> */}
+
+        <Calculator/>
+        <PotentialEarnings/>
       </div>
     </motion.div>
   );
@@ -650,6 +655,8 @@ const CommunityPlan = () => {
         <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className="cp-hero">
           <h1 className="cp-hero-title">Gold Bucks Community Plan</h1>
         </motion.div>
+
+        <div className="cp-divider" />
 
         <AnimatePresence mode="wait">
           <motion.div key={activeTab} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }}>

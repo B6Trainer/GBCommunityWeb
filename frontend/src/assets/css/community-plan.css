@@ -12,22 +12,23 @@
 
 /* Section spacing */
 .cp-section {
-  padding: 4rem 0;
+  padding: 2rem 0;
   position: relative;
 }
 
 .cp-section-narrow {
-  padding: 2rem 0;
+  padding: 1rem 0;
 }
 
 /* Hero Section */
 .cp-hero {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
+  margin-top: 3rem;
 }
 
 .cp-hero-title {
-  font-size: 3.5rem;
+  font-size: 2.0rem;
   font-weight: 800;
   margin-bottom: 1.5rem;
   background: linear-gradient(135deg, #FFD700 0%, #FFC700 50%, #FFB000 100%);
@@ -641,7 +642,7 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .cp-hero-title {
-    font-size: 2.5rem;
+    font-size: 2.0rem;
   }
   
   .cp-hero-subtitle {
@@ -700,7 +701,8 @@
 
 @media (max-width: 480px) {
   .cp-hero-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
   }
   
   .cp-earning-total {
@@ -721,7 +723,7 @@ html {
 .cp-divider {
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.3), transparent);
-  margin: 3rem 0;
+  margin: 1rem 0;
 }
 
 
@@ -1134,9 +1136,6 @@ html {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .cp-hero-title {
-    font-size: 2.5rem;
-  }
   
   .cp-hero-subtitle {
     font-size: 1rem;
@@ -1181,10 +1180,7 @@ html {
 }
 
 @media (max-width: 480px) {
-  .cp-hero-title {
-    font-size: 2rem;
-  }
-  
+
   .cp-earning-total {
     font-size: 2.5rem;
   }
@@ -1213,9 +1209,4 @@ html {
   }
 }
 
-/* Section dividers */
-.cp-divider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.3), transparent);
-  margin: 3rem 0;
-}
+

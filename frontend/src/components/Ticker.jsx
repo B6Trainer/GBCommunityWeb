@@ -11,7 +11,7 @@ const Ticker = () => {
   ];
 
   const goldPriceOz = import.meta.env.VITE_GOLD_PRICE_OZ || '2650.00';
-  const goldPriceGram = import.meta.env.VITE_GOLD_PRICE_GRAM || '85.23';
+  const goldPriceGram = import.meta.env.VITE_GOLD_PRICE_GRAM || '130.23';
 
   return (
     <div className="fixed top-20 left-0 right-0 z-40 border-b border-gold-400/30 gold-glow h-12 flex items-center ticker-gold-translucent">
