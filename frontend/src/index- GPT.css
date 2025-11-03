@@ -1,0 +1,927 @@
+/* =========================================================
+   🌟 TAILWIND LAYERS
+   ========================================================= */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* =========================================================
+   🧱 BASE & LAYOUT STYLES
+   ========================================================= */
+
+/* ----- Root Variables & Rendering Settings ----- */
+:root {
+  font-family: 'Poppins', sans-serif;
+  color-scheme: light dark;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ----- Body Layout & Background ----- */
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #1b1b1b, #000);
+  background-image: url('/images/gold-texture.png');
+  background-size: cover;
+  background-attachment: fixed;
+  animation: silk-shimmer 10s ease infinite;
+  overflow-x: hidden;
+  color: #fff;
+}
+
+/* Overlay texture for shimmer depth */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(
+    rgba(255, 215, 0, 0.08) 1px,
+    transparent 1px
+  );
+  background-size: 4px 4px;
+  pointer-events: none;
+}
+
+/* ----- Universal Box-Sizing & Reset ----- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* ----- Scrollbar Styling ----- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #111;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #FFD700, #b8860b);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ffea00, #c9a401);
+}
+
+/* ----- Containers & Layout Helpers ----- */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Section headers */
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #FFD700;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1px;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+  margin-bottom: 1.5rem;
+}
+
+/* Glass effect for overlays and cards */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+/* Utility helpers */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-left  { text-align: left; }
+
+/* Inputs (Sign-in fields etc.) */
+.signin-input {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.signin-input:focus {
+  border-color: #FFD700;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Placeholder text */
+.signin-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* =========================================================
+   END OF SECTION 1 — BASE & LAYOUT
+   ========================================================= */
+
+/* =========================================================
+   ✨ SECTION 2 — TYPOGRAPHY & TEXT EFFECTS
+   ========================================================= */
+
+/* ----- Gold Text Effect ----- */
+.gold-text {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  text-shadow:
+    0 0 5px rgba(255, 215, 0, 0.6),
+    0 0 15px rgba(255, 165, 0, 0.4);
+}
+
+/* Subtle gradient gold text */
+.gold-text-soft {
+  background: linear-gradient(90deg, #ffe680, #ffd700, #ffcc33);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Embossed metallic gold lettering */
+.embossed-gold {
+  color: #FFD700;
+  text-shadow:
+    1px 1px 1px rgba(0, 0, 0, 0.5),
+    2px 2px 3px rgba(255, 255, 255, 0.2);
+}
+
+/* 3D beveled effect for gold typography */
+.gold-3d {
+  color: #FFD700;
+  text-shadow:
+    1px 1px 0 #b8860b,
+    2px 2px 0 #b8860b,
+    3px 3px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Shimmering gold animation for text */
+.gold-shimmer {
+  background: linear-gradient(
+    90deg,
+    #b8860b,
+    #FFD700,
+    #ffcc33,
+    #FFD700,
+    #b8860b
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: shine 4s linear infinite;
+}
+
+/* Glowing metallic gold text */
+.gold-glow {
+  color: #FFD700;
+  text-shadow:
+    0 0 10px rgba(255, 215, 0, 0.8),
+    0 0 20px rgba(255, 215, 0, 0.6),
+    0 0 30px rgba(255, 215, 0, 0.4);
+}
+
+/* Pulsing glow animation for dynamic shine */
+.glow-pulse {
+  animation: shine-pulse 3s ease-in-out infinite;
+}
+
+/* Twinkling sparkle effect */
+.twinkle-text {
+  position: relative;
+  color: #FFD700;
+  overflow: hidden;
+}
+
+.twinkle-text::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.7), transparent);
+  animation: twinkle 3s infinite;
+}
+
+/* Highlighted gold underline */
+.underline-gold {
+  border-bottom: 2px solid #FFD700;
+  padding-bottom: 2px;
+}
+
+/* Uppercase metallic header */
+.header-metallic {
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #FFD700;
+  letter-spacing: 1.2px;
+  text-shadow:
+    0 0 10px rgba(255, 215, 0, 0.7),
+    0 0 25px rgba(255, 215, 0, 0.5);
+  animation: metallic-shine 6s linear infinite;
+}
+
+/* Subheadings with soft reflection */
+.subheader-reflective {
+  font-size: 1.2rem;
+  color: #ffeb99;
+  text-shadow:
+    0 0 8px rgba(255, 215, 0, 0.4),
+    0 0 15px rgba(255, 215, 0, 0.2);
+}
+
+/* Paragraphs with soft gold hue */
+.text-gold-muted {
+  color: #e6c200;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   END OF SECTION 2 — TYPOGRAPHY & TEXT EFFECTS
+   ========================================================= */
+
+/* =========================================================
+   🟨 SECTION 3 — BUTTONS & COMPONENTS
+   ========================================================= */
+
+/* ----- Logo Face (Gold Glossy Badge) ----- */
+.logo-face {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(
+    135deg,
+    #FFD700 0%,
+    #FFC700 25%,
+    #FFB000 50%,
+    #FFC700 75%,
+    #FFD700 100%
+  );
+  border-radius: 50%;
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.6),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.3),
+    0 0 15px rgba(255, 215, 0, 0.6),
+    0 0 30px rgba(255, 215, 0, 0.3);
+  animation: shine-pulse 4s ease-in-out infinite;
+}
+
+/* ----- Buttons ----- */
+.btn-metallic-gold {
+  background: linear-gradient(135deg, #FFD700, #B8860B);
+  border: none;
+  color: #111;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow:
+    0 4px 10px rgba(255, 215, 0, 0.4),
+    inset 0 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+.btn-metallic-gold:hover {
+  background: linear-gradient(135deg, #FFEA00, #DAA520);
+  box-shadow:
+    0 0 20px rgba(255, 215, 0, 0.8),
+    inset 0 1px 2px rgba(255, 255, 255, 0.7);
+  transform: translateY(-1px);
+}
+
+/* Outline variant */
+.btn-metallic-gold-outline {
+  background: transparent;
+  border: 2px solid #FFD700;
+  color: #FFD700;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-metallic-gold-outline:hover {
+  background: rgba(255, 215, 0, 0.1);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+/* ----- Cards ----- */
+.card-gold-glossy {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 215, 0, 0.15),
+    rgba(255, 215, 0, 0.05)
+  );
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 14px;
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.5),
+    0 8px 20px rgba(255, 215, 0, 0.15);
+  padding: 20px;
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-gold-glossy:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 12px 25px rgba(255, 215, 0, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.6);
+}
+
+/* ----- Ticker Backgrounds ----- */
+.ticker-gold-translucent {
+  background: rgba(255, 215, 0, 0.1);
+  border-top: 1px solid rgba(255, 215, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+  padding: 8px 0;
+  text-align: center;
+  color: #FFD700;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.ticker-gold-opaque {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 215, 0, 0.3),
+    rgba(255, 215, 0, 0.1)
+  );
+  border-top: 1px solid rgba(255, 215, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+  padding: 8px 0;
+  text-align: center;
+  color: #FFD700;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ----- Carousel Navigation Arrows ----- */
+.carousel-arrow {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #FFD700, #B8860B);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #111;
+  box-shadow:
+    0 0 10px rgba(255, 215, 0, 0.5),
+    inset 0 1px 2px rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.carousel-arrow:hover {
+  transform: scale(1.1);
+  box-shadow:
+    0 0 20px rgba(255, 215, 0, 0.8),
+    inset 0 1px 3px rgba(255, 255, 255, 0.7);
+}
+
+/* =========================================================
+   END OF SECTION 3 — BUTTONS & COMPONENTS
+   ========================================================= */
+
+   /* =========================================================
+   💎 SECTION 4 — LOGO & ICON STYLES
+   ========================================================= */
+
+/* ----- Core Logo Face Style ----- */
+.logo-face {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(
+    135deg,
+    #FFD700 0%,
+    #FFC700 25%,
+    #FFB000 50%,
+    #FFC700 75%,
+    #FFD700 100%
+  );
+  border-radius: 8px;
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.6),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.3),
+    0 0 15px rgba(255, 215, 0, 0.6),
+    0 0 30px rgba(255, 215, 0, 0.3);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover lift with intensified glow */
+.logo-face:hover {
+  transform: scale(1.08);
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.7),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(255, 215, 0, 0.8),
+    0 0 40px rgba(255, 215, 0, 0.4);
+}
+
+/* ----- Icon Shine Animation ----- */
+@keyframes icon-shine {
+  0% { background-position: -100px; }
+  100% { background-position: 100px; }
+}
+
+/* Moving gold highlight across icon */
+.icon-shine {
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% auto;
+  animation: icon-shine 3s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ----- Logo Glow Loop (for static icons) ----- */
+@keyframes logo-glow {
+  0%, 100% { box-shadow: 0 0 10px rgba(255, 215, 0, 0.4); }
+  50% { box-shadow: 0 0 25px rgba(255, 215, 0, 0.8); }
+}
+
+/* Apply to any gold icon needing pulsing glow */
+.logo-glow {
+  animation: logo-glow 2.5s ease-in-out infinite;
+}
+
+/* ----- Icon Wrapper ----- */
+.icon-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: radial-gradient(circle, #1a1a1a, #000);
+  padding: 8px;
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.1),
+    0 0 10px rgba(255, 215, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Icon hover accent */
+.icon-container:hover {
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.2),
+    0 0 20px rgba(255, 215, 0, 0.4);
+  transform: scale(1.05);
+}
+
+/* ----- Responsive Sizing for Logos ----- */
+@media (max-width: 768px) {
+  .logo-face {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-face {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* =========================================================
+   END OF SECTION 4 — LOGO & ICON STYLES
+   ========================================================= */
+
+/* =========================================================
+   🪙 SECTION 5 — CARDS & CONTAINERS
+   ========================================================= */
+
+/* ----- General Card Layout ----- */
+.card {
+  background: rgba(20, 20, 20, 0.7);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: 16px;
+  box-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(255, 215, 0, 0.15);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Subtle lift on hover */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.6),
+    0 0 25px rgba(255, 215, 0, 0.25);
+}
+
+/* ----- Glass Card Variation ----- */
+.card-glass {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 215, 0, 0.15);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  box-shadow:
+    0 2px 8px rgba(255, 215, 0, 0.1),
+    inset 0 0 15px rgba(255, 215, 0, 0.05);
+}
+
+/* Gold accent border for premium sections */
+.card-gold {
+  border: 2px solid #FFD700;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+/* ----- Card Titles & Headers ----- */
+.card-header {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #FFD700;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.5px;
+}
+
+.card-subtitle {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 1rem;
+}
+
+/* ----- Card Content Area ----- */
+.card-content {
+  color: #f8f8f8;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* ----- Card Footer (Action Buttons / Stats) ----- */
+.card-footer {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ----- Interactive Glow Hover ----- */
+.card-hover-glow:hover {
+  box-shadow:
+    0 0 25px rgba(255, 215, 0, 0.3),
+    inset 0 0 10px rgba(255, 215, 0, 0.2);
+}
+
+/* ----- Small Info Card Variation ----- */
+.info-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 215, 0, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 215, 0, 0.4);
+}
+
+/* ----- Card Grid Layouts ----- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Responsive tweak for smaller viewports */
+@media (max-width: 768px) {
+  .card {
+    padding: 1rem;
+  }
+
+  .card-header {
+    font-size: 1.1rem;
+  }
+
+  .card-grid {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 0.8rem;
+    border-radius: 12px;
+  }
+
+  .card-header {
+    font-size: 1rem;
+  }
+
+  .card-content {
+    font-size: 0.9rem;
+  }
+}
+
+/* =========================================================
+   END OF SECTION 5 — CARDS & CONTAINERS
+   ========================================================= */
+
+/* =========================================================
+   ⚙️ SECTION 6 — ANIMATIONS & TRANSITIONS
+   ========================================================= */
+
+/* ----- 6.1 Global Fade & Reveal Animations ----- */
+
+/* Fade In */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in {
+  animation: fade-in 0.8s ease forwards;
+}
+
+/* Fade Up (stronger elevation) */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up {
+  animation: fade-up 1s ease-out forwards;
+}
+
+/* Fade Scale */
+@keyframes fade-scale {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.fade-scale {
+  animation: fade-scale 0.6s ease-out forwards;
+}
+
+/* ----- 6.2 Glow & Shine Animations ----- */
+
+/* Silk-like shimmer across surfaces */
+@keyframes silk-shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* Used for backgrounds */
+.silk-shimmer {
+  background-size: 200% 200%;
+  animation: silk-shimmer 10s ease infinite;
+}
+
+/* Pulsing Glow for icons, gold borders, or highlights */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.8);
+  }
+}
+.glow-pulse {
+  animation: glow-pulse 2.5s ease-in-out infinite;
+}
+
+/* ----- 6.3 Floating & Motion Animations ----- */
+
+/* Floating (gentle up-down motion) */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Bounce-in entry */
+@keyframes bounce-in {
+  0%   { transform: scale(0.8); opacity: 0.5; }
+  60%  { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
+}
+.bounce-in {
+  animation: bounce-in 0.6s ease-out;
+}
+
+/* Continuous rotation (for icons or loaders) */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.spin {
+  animation: spin 2s linear infinite;
+}
+
+/* ----- 6.4 Transition Helpers ----- */
+
+/* Smooth transition utility */
+.transition-base {
+  transition: all 0.3s ease;
+}
+
+/* Faster variant */
+.transition-fast {
+  transition: all 0.15s ease-in-out;
+}
+
+/* Slow variant for smoother effects */
+.transition-slow {
+  transition: all 0.6s ease;
+}
+
+/* ----- 6.5 Hover Glow Utility ----- */
+.hover-glow:hover {
+  box-shadow:
+    0 0 15px rgba(255, 215, 0, 0.4),
+    0 0 30px rgba(255, 215, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+/* ----- 6.6 Responsive Motion Scaling ----- */
+@media (max-width: 480px) {
+  .float {
+    animation-duration: 2.5s;
+  }
+  .fade-up {
+    animation-duration: 0.8s;
+  }
+}
+
+/* =========================================================
+   END OF SECTION 6 — ANIMATIONS & TRANSITIONS
+   ========================================================= */
+/* =========================================================
+   📱 SECTION 7 — RESPONSIVE & UTILITY OVERRIDES
+   ========================================================= */
+
+/* ----- 7.1 Base Responsive Structure ----- */
+
+/* Large screens (Desktops > 1280px) */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1400px;
+  }
+
+  .section-title {
+    font-size: 2.25rem;
+  }
+}
+
+/* Medium screens (Tablets ≤ 1024px) */
+@media (max-width: 1024px) {
+  body {
+    background-attachment: scroll; /* smoother on mobile devices */
+  }
+
+  .container {
+    padding: 0 1.2rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+/* Small screens (Tablets & large phones ≤ 768px) */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .card-header {
+    font-size: 1.1rem;
+  }
+
+  .signin-input {
+    font-size: 0.95rem;
+    padding: 10px 12px;
+  }
+
+  .logo-face {
+    width: 28px;
+    height: 28px;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .title-gradient {
+    font-size: 1.8rem;
+  }
+
+  .text-center-mobile {
+    text-align: center;
+  }
+}
+
+/* Extra small screens (Phones ≤ 480px) */
+@media (max-width: 480px) {
+  body {
+    background-size: auto;
+  }
+
+  .container {
+    padding: 0 0.8rem;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  .card {
+    padding: 0.8rem;
+    border-radius: 10px;
+  }
+
+  .card-header {
+    font-size: 1rem;
+  }
+
+  .card-content {
+    font-size: 0.9rem;
+  }
+
+  .title-gradient {
+    font-size: 1.5rem;
+  }
+
+  .signin-input {
+    padding: 8px 10px;
+  }
+
+  /* Reduce animation motion on smaller screens */
+  .silk-shimmer {
+    animation-duration: 8s;
+  }
+
+  .glow-pulse {
+    animation-duration: 2s;
+  }
+
+  /* Hide heavy visuals if needed */
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+/* ----- 7.2 Utility Classes for Layout Adjustments ----- */
+
+/* Alignment Utilities */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Padding and Margin Helpers */
+.px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+.py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-4 { margin-top: 1rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-4 { margin-bottom: 1rem; }
+
+/* Text size helpers */
+.text-sm { font-size: 0.9rem; }
+.text-lg { font-size: 1.2rem; }
+.text-xl { font-size: 1.5rem; }
+
+/* Hide/Show for devices */
+.hide-desktop { display: none; }
+@media (max-width: 768px) {
+  .hide-desktop { display: none !important; }
+  .hide-mobile { display: block !important; }
+}
+
+/* =========================================================
+   END OF SECTION 7 — RESPONSIVE & UTILITY OVERRIDES
+   ========================================================= */
