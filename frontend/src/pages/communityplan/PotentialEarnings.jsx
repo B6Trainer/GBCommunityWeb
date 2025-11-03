@@ -72,88 +72,77 @@ const PotentialEarnings = () => {
   }, []);
 
   return (
-
-    <>
-    {console.log("Rendering Calculator ",rows)}
-        <div className="max-w-6xl mx-auto p-4 space-y-6 text-sm">
-
-        {/* === SECTION 1 === */}
-        <div className=" p-2 rounded-2xl shadow">
-            <h2 className="text-lg font-semibold mb-2">
-                                Potential Earnings BreakDown 
-            </h2>
-            <div className="overflow-x-auto">
-            <table className="min-w-full border text-right text-xs">
-                <thead className="bg-black-50">
-                <tr>
-                    <th className="px-2 py-1">Level</th>
-                    {/* <th className="px-2 py-1">Slot Value</th> */}
-                    <th className="px-2 py-1">level Members</th>                    
-                    <th className="px-2 py-1">Upgrade Bonus Available</th>                    
-                    <th className="px-2 py-1">Level Bonus (%)</th>
-                    <th className="px-2 py-1">Level Earnings</th>
+    <div className="potential-earnings-container">
+      {/* === SECTION 1: Breakdown Table === */}
+      <div className="pe-breakdown-section">
+        <h2 className="pe-section-title">Potential Earnings Breakdown</h2>
+        
+        <div className="pe-table-container">
+          <table className="pe-table">
+            <thead>
+              <tr>
+                <th>Level</th>
+                <th>Level Members</th>
+                <th>Upgrade Bonus Available</th>
+                <th>Level Bonus (%)</th>
+                <th>Level Earnings</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((r, i) => (
+                <tr key={i}>
+                  <td>{r.lv}</td>
+                  <td>{fmt(r.lm)}</td>
+                  <td>{fmt(r.tuv)}</td>
+                  <td>{(r.lbp * 100).toFixed(2)}%</td>
+                  <td>{fmt(r.lbv)}</td>
                 </tr>
-                </thead>
-
-                <tbody>
-                {rows.map((r, i) => (
-                    <tr key={i} className="border-t">
-                    <td className="text-left px-2 py-1">{r.lv}</td>
-                    {/* <td className="px-2 py-1">{fmt(r.sv)}</td> */}
-                    <td className="px-2 py-1">{fmt(r.lm)}</td>
-                    {/* <td className="px-2 py-1">{fmt(r.ta)}</td> */}
-                    {/* <td className="px-2 py-1">{fmt(r.tb)}</td> */}
-                    {/* <td className="px-2 py-1">{fmt(r.ubv)}</td>*/}
-                    <td className="px-2 py-1">{fmt(r.tuv)}</td>
-                    {/* <td className="px-2 py-1">{fmt(r.ube)}</td> */}
-                    <td className="px-2 py-1">{(r.lbp * 100).toFixed(2)}%</td>
-                    <td className="px-2 py-1">{fmt(r.lbv)}</td>
-                    </tr>
-                ))}
-                </tbody>
-                <tfoot className="font-semibold bg-gray-50">
-                <tr>
-                    <td className="text-left px-2 py-1">Total</td>
-                    
-                    <td>{fmt(totals.totalJ)}</td>
-                    <td>{fmt(totals.Q19)}</td>                    
-                    
-                    
-                    <td></td>                    
-                    <td>{fmt(totals.T19)}</td>
-                </tr>
-                </tfoot>
-            </table>
-            </div>
+              ))}
+            </tbody>
+            <tfoot>
+              <tr>
+                <td>Total</td>
+                <td>{fmt(totals.totalJ)}</td>
+                <td>{fmt(totals.Q19)}</td>
+                <td></td>
+                <td>{fmt(totals.T19)}</td>
+              </tr>
+            </tfoot>
+          </table>
         </div>
+      </div>
 
-        {/* === SECTION 2 === */}
-        <div className="p-6 rounded-2xl shadow">
-            <h2 className="text-lg font-semibold mb-2">
-                Potential Earnings Summary
-            </h2>
+      {/* === SECTION 2: Summary with Animated Earnings === */}
+      <div className="pe-summary-section">
+        <h2 className="pe-summary-title">Potential Earnings Summary</h2>
 
+        <div className="pe-earning-grid">
+          <div className="pe-earning-card">
+            <div className="pe-icon-wrapper">
+              <TrendingUp className="pe-icon" />
+            </div>
+            <div className="pe-earning-label">Upgrade Bonus</div>
+            <div className="pe-earning-value">{fmt(summary.ubearning)}</div>
+          </div>
 
-            <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+          <div className="pe-earning-card">
+            <div className="pe-icon-wrapper">
+              <Gift className="pe-icon" />
+            </div>
+            <div className="pe-earning-label">Level Bonus</div>
+            <div className="pe-earning-value">{fmt(summary.lbearning)}</div>
+          </div>
 
-            <div className=" p-3 rounded">
-                <div className="text-xs ">Upgrade Bonus</div>
-                <div className="font-semibold">{fmt(summary.ubearning)}</div>
+          <div className="pe-earning-card total">
+            <div className="pe-icon-wrapper">
+              <Coins className="pe-icon" />
             </div>
-            <div className=" p-3 rounded">
-                <div className="text-xs ">Level Bonus</div>
-                <div className="font-semibold">{fmt(summary.lbearning)}</div>
-            </div>
-            <div className="p-3 rounded font-semibold">
-                <div className="text-xs">Total Earnings</div>
-                <div>{fmt(summary.totearning)}</div>
-            </div>
-            </div>
+            <div className="pe-earning-label">Total Earnings</div>
+            <div className="pe-earning-value">{fmt(summary.totearning)}</div>
+          </div>
         </div>
-
-        </div>
-    </>
-    
+      </div>
+    </div>
   );
 };
 
