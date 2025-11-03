@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { TrendingUp, Gift, Coins } from 'lucide-react';
+import './PotentialEarnings.css';
 
 const PotentialEarnings = () => {
   
