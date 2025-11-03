@@ -73,46 +73,7 @@ const PotentialEarnings = () => {
 
   return (
     <div className="potential-earnings-container">
-      {/* === SECTION 1: Breakdown Table === */}
-      <div className="pe-breakdown-section">
-        <h2 className="pe-section-title">Potential Earnings Breakdown</h2>
-        
-        <div className="pe-table-container">
-          <table className="pe-table">
-            <thead>
-              <tr>
-                <th>Level</th>
-                <th>Level Members</th>
-                <th>Upgrade Bonus Available</th>
-                <th>Level Bonus (%)</th>
-                <th>Level Earnings</th>
-              </tr>
-            </thead>
-            <tbody>
-              {rows.map((r, i) => (
-                <tr key={i}>
-                  <td>{r.lv}</td>
-                  <td>{fmt(r.lm)}</td>
-                  <td>{fmt(r.tuv)}</td>
-                  <td>{(r.lbp * 100).toFixed(2)}%</td>
-                  <td>{fmt(r.lbv)}</td>
-                </tr>
-              ))}
-            </tbody>
-            <tfoot>
-              <tr>
-                <td>Total</td>
-                <td>{fmt(totals.totalJ)}</td>
-                <td>{fmt(totals.Q19)}</td>
-                <td></td>
-                <td>{fmt(totals.T19)}</td>
-              </tr>
-            </tfoot>
-          </table>
-        </div>
-      </div>
-
-      {/* === SECTION 2: Summary with Sleek Design === */}
+      {/* === SECTION 1: Summary (Moved to top) === */}
       <div className="pe-summary-section">
         <h2 className="pe-summary-title">Potential Earnings Summary</h2>
 
@@ -123,7 +84,7 @@ const PotentialEarnings = () => {
               <TrendingUp className="pe-icon-small" />
             </div>
             <div className="pe-earning-label">Upgrade Bonus</div>
-            <div className="pe-earning-value">{fmt(summary.ubearning)}</div>
+            <div className="pe-earning-value metallic-shine">{fmt(summary.ubearning)}</div>
           </div>
 
           <div className="pe-earning-card-sleek">
@@ -131,7 +92,7 @@ const PotentialEarnings = () => {
               <Gift className="pe-icon-small" />
             </div>
             <div className="pe-earning-label">Level Bonus</div>
-            <div className="pe-earning-value">{fmt(summary.lbearning)}</div>
+            <div className="pe-earning-value metallic-shine">{fmt(summary.lbearning)}</div>
           </div>
         </div>
 
@@ -142,7 +103,57 @@ const PotentialEarnings = () => {
               <Coins className="pe-icon-small" />
             </div>
             <div className="pe-earning-label">Total Earnings</div>
-            <div className="pe-earning-value-large">{fmt(summary.totearning)}</div>
+            <div className="pe-earning-value-large metallic-shine">{fmt(summary.totearning)}</div>
+          </div>
+        </div>
+      </div>
+
+      {/* === SECTION 2: Breakdown Table (Moved to bottom) === */}
+      <div className="pe-breakdown-section">
+        <div className="pe-breakdown-header">
+          <h2 className="pe-section-title">Potential Earnings Breakdown</h2>
+          <button 
+            className="pe-toggle-btn"
+            onClick={() => setShowBreakdown(!showBreakdown)}
+            aria-label="Toggle breakdown"
+          >
+            {showBreakdown ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+          </button>
+        </div>
+        
+        <div className={`pe-table-wrapper ${showBreakdown ? 'expanded' : 'collapsed'}`}>
+          <div className="pe-table-container">
+            <table className="pe-table">
+              <thead>
+                <tr>
+                  <th>Level</th>
+                  <th>Level Members</th>
+                  <th>Upgrade Bonus Available</th>
+                  <th>Level Bonus (%)</th>
+                  <th>Level Earnings</th>
+                </tr>
+              </thead>
+              <tbody>
+                {rows.map((r, i) => (
+                  <tr key={i}>
+                    <td>{r.lv}</td>
+                    <td>{fmt(r.lm)}</td>
+                    <td>{fmt(r.tuv)}</td>
+                    <td>{(r.lbp * 100).toFixed(2)}%</td>
+                    <td>{fmt(r.lbv)}</td>
+                  </tr>
+                ))}
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>Total</td>
+                  <td>{fmt(totals.totalJ)}</td>
+                  <td>{fmt(totals.Q19)}</td>
+                  <td></td>
+                  <td>{fmt(totals.T19)}</td>
+                </tr>
+              </tfoot>
+            </table>
           </div>
         </div>
       </div>
