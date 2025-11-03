@@ -254,6 +254,34 @@
   background-clip: text;
 }
 
+/* Metallic Shine Effect */
+.metallic-shine {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    #FFD700 0%,
+    #FFED4E 25%,
+    #FFD700 50%,
+    #FFC700 75%,
+    #FFD700 100%
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: metallic-shimmer 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+}
+
+@keyframes metallic-shimmer {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
 /* Divider */
 .calc-divider {
   height: 2px;
