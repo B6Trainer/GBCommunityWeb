@@ -104,8 +104,8 @@ const Calculator = () => {
             <input
               type="number"
               value={directRef}
-              onChange={(e) => setDirectRef(+e.target.value)}
-              className="calc-input-field"
+              onChange={(e) => handleInputChange(e, setDirectRef)}
+              className="calc-input-field calc-no-spinner"
             />
           </div>
           
@@ -114,8 +114,8 @@ const Calculator = () => {
             <input
               type="number"
               value={teamRef}
-              onChange={(e) => setTeamRef(+e.target.value)}
-              className="calc-input-field"
+              onChange={(e) => handleInputChange(e, setTeamRef)}
+              className="calc-input-field calc-no-spinner"
             />
           </div>
           
@@ -154,7 +154,7 @@ const Calculator = () => {
               <DollarSign className="calc-icon-small" />
             </div>
             <div className="calc-summary-label">Direct Referral</div>
-            <div className="calc-summary-value">{fmt(summary.drearning)}</div>
+            <div className="calc-summary-value metallic-shine">{fmt(summary.drearning)}</div>
           </div>
           
           <div className="calc-summary-card-sleek">
@@ -162,7 +162,7 @@ const Calculator = () => {
               <TrendingUp className="calc-icon-small" />
             </div>
             <div className="calc-summary-label">Upgrade Bonus</div>
-            <div className="calc-summary-value">{fmt(summary.ubearning)}</div>
+            <div className="calc-summary-value metallic-shine">{fmt(summary.ubearning)}</div>
           </div>
           
           <div className="calc-summary-card-sleek">
@@ -170,7 +170,7 @@ const Calculator = () => {
               <Gift className="calc-icon-small" />
             </div>
             <div className="calc-summary-label">Level Bonus</div>
-            <div className="calc-summary-value">{fmt(summary.lbearning)}</div>
+            <div className="calc-summary-value metallic-shine">{fmt(summary.lbearning)}</div>
           </div>
         </div>
         
@@ -181,50 +181,61 @@ const Calculator = () => {
               <Sparkles className="calc-icon-small" />
             </div>
             <div className="calc-summary-label">Total Earnings</div>
-            <div className="calc-summary-value-large">{fmt(summary.totearning)}</div>
+            <div className="calc-summary-value-large metallic-shine">{fmt(summary.totearning)}</div>
           </div>
         </div>
       </div>
 
       {/* === SECTION 2: Breakdown Table === */}
       <div className="calc-breakdown-section">
-        <h2 className="calc-breakdown-title">Detailed Breakdown</h2>
+        <div className="calc-breakdown-header">
+          <h2 className="calc-breakdown-title">Detailed Breakdown</h2>
+          <button 
+            className="calc-toggle-btn"
+            onClick={() => setShowBreakdown(!showBreakdown)}
+            aria-label="Toggle breakdown"
+          >
+            {showBreakdown ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+          </button>
+        </div>
         
-        <div className="calc-table-container">
-          <table className="calc-table">
-            <thead>
-              <tr>
-                <th>Level</th>
-                <th>Level Members</th>
-                <th>Team Allocation</th>
-                <th>Upgrade Bonus Available</th>
-                <th>Upgrade Value Earned</th>
-                <th>Level Earnings</th>
-              </tr>
-            </thead>
-            <tbody>
-              {rows.map((r, i) => (
-                <tr key={i}>
-                  <td>{r.lv}</td>
-                  <td>{fmt(r.lm)}</td>
-                  <td>{fmt(r.ta)}</td>
-                  <td>{fmt(r.tuv)}</td>
-                  <td>{fmt(r.ube)}</td>
-                  <td>{fmt(r.lbv)}</td>
+        <div className={`calc-table-wrapper ${showBreakdown ? 'expanded' : 'collapsed'}`}>
+          <div className="calc-table-container">
+            <table className="calc-table">
+              <thead>
+                <tr>
+                  <th>Level</th>
+                  <th>Level Members</th>
+                  <th>Team Allocation</th>
+                  <th>Upgrade Bonus Available</th>
+                  <th>Upgrade Value Earned</th>
+                  <th>Level Earnings</th>
                 </tr>
-              ))}
-            </tbody>
-            <tfoot>
-              <tr>
-                <td>Total</td>
-                <td>{fmt(totals.totalJ)}</td>
-                <td>{fmt(totals.totalL)}</td>
-                <td></td>
-                <td>{fmt(totals.Q19)}</td>
-                <td>{fmt(totals.T19)}</td>
-              </tr>
-            </tfoot>
-          </table>
+              </thead>
+              <tbody>
+                {rows.map((r, i) => (
+                  <tr key={i}>
+                    <td>{r.lv}</td>
+                    <td>{fmt(r.lm)}</td>
+                    <td>{fmt(r.ta)}</td>
+                    <td>{fmt(r.tuv)}</td>
+                    <td>{fmt(r.ube)}</td>
+                    <td>{fmt(r.lbv)}</td>
+                  </tr>
+                ))}
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>Total</td>
+                  <td>{fmt(totals.totalJ)}</td>
+                  <td>{fmt(totals.totalL)}</td>
+                  <td></td>
+                  <td>{fmt(totals.Q19)}</td>
+                  <td>{fmt(totals.T19)}</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
         </div>
       </div>
       
