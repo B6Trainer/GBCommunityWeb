@@ -112,33 +112,37 @@ const PotentialEarnings = () => {
         </div>
       </div>
 
-      {/* === SECTION 2: Summary with Animated Earnings === */}
+      {/* === SECTION 2: Summary with Sleek Design === */}
       <div className="pe-summary-section">
         <h2 className="pe-summary-title">Potential Earnings Summary</h2>
 
-        <div className="pe-earning-grid">
-          <div className="pe-earning-card">
-            <div className="pe-icon-wrapper">
-              <TrendingUp className="pe-icon" />
+        {/* Row 1: Upgrade Bonus and Level Bonus */}
+        <div className="pe-summary-row-1">
+          <div className="pe-earning-card-sleek">
+            <div className="pe-icon-wrapper-small">
+              <TrendingUp className="pe-icon-small" />
             </div>
             <div className="pe-earning-label">Upgrade Bonus</div>
             <div className="pe-earning-value">{fmt(summary.ubearning)}</div>
           </div>
 
-          <div className="pe-earning-card">
-            <div className="pe-icon-wrapper">
-              <Gift className="pe-icon" />
+          <div className="pe-earning-card-sleek">
+            <div className="pe-icon-wrapper-small">
+              <Gift className="pe-icon-small" />
             </div>
             <div className="pe-earning-label">Level Bonus</div>
             <div className="pe-earning-value">{fmt(summary.lbearning)}</div>
           </div>
+        </div>
 
-          <div className="pe-earning-card total">
-            <div className="pe-icon-wrapper">
-              <Coins className="pe-icon" />
+        {/* Row 2: Total Earnings (Full Width) */}
+        <div className="pe-summary-row-2">
+          <div className="pe-earning-card-sleek total">
+            <div className="pe-icon-wrapper-small">
+              <Coins className="pe-icon-small" />
             </div>
             <div className="pe-earning-label">Total Earnings</div>
-            <div className="pe-earning-value">{fmt(summary.totearning)}</div>
+            <div className="pe-earning-value-large">{fmt(summary.totearning)}</div>
           </div>
         </div>
       </div>
