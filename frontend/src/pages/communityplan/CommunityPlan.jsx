@@ -19,8 +19,8 @@ import {
   Calculator as CalcIcon,
   Coins
 } from 'lucide-react';
-import Calculator from './communityplan/Calculator';
-import PotentialEarnings from './communityplan/PotentialEarnings';
+import Calculator from './Calculator';
+import PotentialEarnings from './PotentialEarnings';
 
 const CommunityPlan = () => {
   const [activeTab, setActiveTab] = useState('home');

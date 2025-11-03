@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 import Home from './pages/home/Home';
 import About from './pages/About';
 import Plans from './pages/Plans';
-import CommunityPlan from './pages/CommunityPlan';
+import CommunityPlan from './pages/communityplan/CommunityPlan';
 import GoldBoxPlan from './pages/GoldBoxPlan';
 import Dashboard from './pages/Dashboard';
 import Events from './pages/Events';
