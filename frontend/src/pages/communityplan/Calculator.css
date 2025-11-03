@@ -61,6 +61,17 @@
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
+/* Remove increment/decrement arrows from number inputs */
+.calc-no-spinner::-webkit-outer-spin-button,
+.calc-no-spinner::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.calc-no-spinner[type=number] {
+  -moz-appearance: textfield;
+}
+
 .calc-input-field {
   padding: 0.6rem 0.8rem;
   background: rgba(0, 0, 0, 0.3);
