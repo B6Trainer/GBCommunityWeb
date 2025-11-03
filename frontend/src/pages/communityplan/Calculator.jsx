@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { DollarSign, TrendingUp, Gift, Sparkles } from 'lucide-react';
+import { DollarSign, TrendingUp, Gift, Sparkles, ChevronDown, ChevronUp } from 'lucide-react';
 import './Calculator.css';
 
 const Calculator = () => {
@@ -9,6 +9,7 @@ const Calculator = () => {
   const [slot, setSlot] = useState(5); // Slots (1–10)
   const [selectedSlotValue, setSelectedSlotValue] = useState(250); // Slot price (editable)
   const [totalRef, setTotalRef] = useState(0); // Upgrade multiplier
+  const [showBreakdown, setShowBreakdown] = useState(true); // Toggle breakdown table
   const totalSlotValue=19430
 
   // === OUTPUT STATES ===
@@ -34,6 +35,17 @@ const Calculator = () => {
 
   // === FORMATTER ===
   const fmt = (n) => (Math.round((n + Number.EPSILON) * 100) / 100).toLocaleString();
+
+  // Handle input change to prevent 0 prefix
+  const handleInputChange = (e, setter) => {
+    const value = e.target.value;
+    if (value === '' || value === '0') {
+      setter(0);
+    } else {
+      const numValue = parseInt(value, 10);
+      setter(isNaN(numValue) ? 0 : numValue);
+    }
+  };
 
   // === RECALCULATE ALL ===
   useEffect(() => {
