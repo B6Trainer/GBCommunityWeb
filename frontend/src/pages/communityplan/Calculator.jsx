@@ -80,143 +80,135 @@ const Calculator = () => {
   }, [directRef, teamRef, slot, selectedSlotValue]);
 
   return (
+    <div className="calculator-container">
+      {/* === SECTION 1: Input & Summary === */}
+      <div className="calc-input-section">
+        <h2 className="calc-section-title">Calculate Your Earnings</h2>
 
-    <>
-    {console.log("Rendering Calculator ",rows)}
-        <div className="max-w-6xl mx-auto p-4 space-y-6 text-sm">
-        {/* === SECTION 1 === */}
-        <div className="p-6 rounded-2xl shadow">
-            <h2 className="text-lg font-semibold mb-2">
-            Calculate
-            </h2>
-
-            <div className="flex flex-wrap gap-4">
-            <div>
-                <label className="block text-xs font-medium">Direct Referral</label>
-                <input
-                type="number"
-                value={directRef}
-                onChange={(e) => setDirectRef(+e.target.value)}
-                className="border p-2 rounded w-28"
-                />
-            </div>
-            <div>
-                <label className="block text-xs font-medium">Team Referral</label>
-                <input
-                type="number"
-                value={teamRef}
-                onChange={(e) => setTeamRef(+e.target.value)}
-                className="border p-2 rounded w-28"
-                />
-            </div>
-            <div>
-                <label className="block text-xs font-medium">Slots</label>
-                <select
-                value={slot}
-                onChange={(e) => setSlot(+e.target.value)}
-                className="border p-2 rounded w-24"
-                >
-                {[...Array(10)].map((_, i) => (
-                    <option key={i + 1}>{i + 1}</option>
-                ))}
-                </select>
-            </div>
-
-            </div>
-
-            <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-            <div className=" p-3 rounded">
-                <div className="text-xs ">Total Team</div>
-                <div className="font-semibold">{totalRef}</div>
-            </div>
-            <div className=" p-3 rounded">
-                <div className="text-xs ">Slot Value</div>
-                <div className="font-semibold">{selectedSlotValue}</div>
-            </div>
-
-            </div>
-
-
-            <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-            <div className=" p-3 rounded">
-                <div className="text-xs ">Direct Referral</div>
-                <div className="font-semibold">{fmt(summary.drearning)}</div>
-            </div>
-            <div className=" p-3 rounded">
-                <div className="text-xs ">Upgrade Bonus</div>
-                <div className="font-semibold">{fmt(summary.ubearning)}</div>
-            </div>
-            <div className=" p-3 rounded">
-                <div className="text-xs ">Level Bonus</div>
-                <div className="font-semibold">{fmt(summary.lbearning)}</div>
-            </div>
-            <div className="p-3 rounded font-semibold">
-                <div className="text-xs">Total Earnings</div>
-                <div>{fmt(summary.totearning)}</div>
-            </div>
-            </div>
+        {/* Input Fields */}
+        <div className="calc-inputs-grid">
+          <div className="calc-input-group">
+            <label className="calc-input-label">Direct Referral</label>
+            <input
+              type="number"
+              value={directRef}
+              onChange={(e) => setDirectRef(+e.target.value)}
+              className="calc-input-field"
+            />
+          </div>
+          <div className="calc-input-group">
+            <label className="calc-input-label">Team Referral</label>
+            <input
+              type="number"
+              value={teamRef}
+              onChange={(e) => setTeamRef(+e.target.value)}
+              className="calc-input-field"
+            />
+          </div>
+          <div className="calc-input-group">
+            <label className="calc-input-label">Slots</label>
+            <select
+              value={slot}
+              onChange={(e) => setSlot(+e.target.value)}
+              className="calc-select-field"
+            >
+              {[...Array(10)].map((_, i) => (
+                <option key={i + 1} value={i + 1}>{i + 1}</option>
+              ))}
+            </select>
+          </div>
         </div>
 
-        {/* === SECTION 2 === */}
-        <div className=" p-2 rounded-2xl shadow">
-            <h2 className="text-lg font-semibold mb-2">
-            Break Down 
-            </h2>
-            <div className="overflow-x-auto">
-            <table className="min-w-full border text-right text-xs">
-                <thead className="bg-black-50">
-                <tr>
-                    <th className="px-2 py-1">Level</th>
-                    {/* <th className="px-2 py-1">Slot Value</th> */}
-                    <th className="px-2 py-1">level Members</th>
-                    <th className="px-2 py-1">Team Allocation</th>
-                    {/* <th className="px-2 py-1">Team Balance</th> */}
-                    {/* <th className="px-2 py-1">Upgrade Bonus Value</th> */}
-                    <th className="px-2 py-1">Upgrade Bonus Available</th>
-                    <th className="px-2 py-1">Upgrade value earned</th>
-                    {/* <th className="px-2 py-1">Level Bonus (%)</th> */}
-                    <th className="px-2 py-1">Level Earnings</th>
+        {/* Basic Info Cards */}
+        <div className="calc-basic-info">
+          <div className="calc-info-card">
+            <div className="calc-info-label">Total Team</div>
+            <div className="calc-info-value">{totalRef}</div>
+          </div>
+          <div className="calc-info-card">
+            <div className="calc-info-label">Slot Value</div>
+            <div className="calc-info-value">{selectedSlotValue}</div>
+          </div>
+        </div>
+
+        {/* Summary Cards with Animated Icons */}
+        <div className="calc-summary-grid">
+          <div className="calc-summary-card">
+            <div className="calc-icon-wrapper">
+              <DollarSign className="calc-icon" />
+            </div>
+            <div className="calc-summary-label">Direct Referral</div>
+            <div className="calc-summary-value">{fmt(summary.drearning)}</div>
+          </div>
+          
+          <div className="calc-summary-card">
+            <div className="calc-icon-wrapper">
+              <TrendingUp className="calc-icon" />
+            </div>
+            <div className="calc-summary-label">Upgrade Bonus</div>
+            <div className="calc-summary-value">{fmt(summary.ubearning)}</div>
+          </div>
+          
+          <div className="calc-summary-card">
+            <div className="calc-icon-wrapper">
+              <Gift className="calc-icon" />
+            </div>
+            <div className="calc-summary-label">Level Bonus</div>
+            <div className="calc-summary-value">{fmt(summary.lbearning)}</div>
+          </div>
+          
+          <div className="calc-summary-card total-earnings">
+            <div className="calc-icon-wrapper">
+              <Sparkles className="calc-icon" />
+            </div>
+            <div className="calc-summary-label">Total Earnings</div>
+            <div className="calc-summary-value">{fmt(summary.totearning)}</div>
+          </div>
+        </div>
+      </div>
+
+      {/* === SECTION 2: Breakdown Table === */}
+      <div className="calc-breakdown-section">
+        <h2 className="calc-breakdown-title">Detailed Breakdown</h2>
+        
+        <div className="calc-table-container">
+          <table className="calc-table">
+            <thead>
+              <tr>
+                <th>Level</th>
+                <th>Level Members</th>
+                <th>Team Allocation</th>
+                <th>Upgrade Bonus Available</th>
+                <th>Upgrade Value Earned</th>
+                <th>Level Earnings</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((r, i) => (
+                <tr key={i}>
+                  <td>{r.lv}</td>
+                  <td>{fmt(r.lm)}</td>
+                  <td>{fmt(r.ta)}</td>
+                  <td>{fmt(r.tuv)}</td>
+                  <td>{fmt(r.ube)}</td>
+                  <td>{fmt(r.lbv)}</td>
                 </tr>
-                </thead>
-                      {/* computed.push({ lv: level, sv: slotvalue, lb: levelmembers, ta: teamallocation, tb: teambalance,
-                         ubv: ubvalue, tuv: tubvalue, ube: ubearned, lbp: lbPercentage, lbv: lbvalue }); */}
-                <tbody>
-                {rows.map((r, i) => (
-                    <tr key={i} className="border-t">
-                    <td className="text-left px-2 py-1">{r.lv}</td>
-                    {/* <td className="px-2 py-1">{fmt(r.sv)}</td> */}
-                    <td className="px-2 py-1">{fmt(r.lm)}</td>
-                    <td className="px-2 py-1">{fmt(r.ta)}</td>
-                    {/* <td className="px-2 py-1">{fmt(r.tb)}</td> */}
-                    {/* <td className="px-2 py-1">{fmt(r.ubv)}</td>                     */}
-                    <td className="px-2 py-1">{fmt(r.tuv)}</td>
-                    <td className="px-2 py-1">{fmt(r.ube)}</td>
-                    {/* <td className="px-2 py-1">{(r.lbp * 100).toFixed(2)}%</td> */}
-                    <td className="px-2 py-1">{fmt(r.lbv)}</td>
-                    </tr>
-                ))}
-                </tbody>
-                <tfoot className="font-semibold bg-gray-50">
-                <tr>
-                    <td className="text-left px-2 py-1">Total</td>
-                    
-                    <td>{fmt(totals.totalJ)}</td>
-                    <td>{fmt(totals.totalL)}</td>                    
-                    <td></td>
-                    
-                    <td>{fmt(totals.Q19)}</td>                    
-                    <td>{fmt(totals.T19)}</td>
-                </tr>
-                </tfoot>
-            </table>
-            </div>
+              ))}
+            </tbody>
+            <tfoot>
+              <tr>
+                <td>Total</td>
+                <td>{fmt(totals.totalJ)}</td>
+                <td>{fmt(totals.totalL)}</td>
+                <td></td>
+                <td>{fmt(totals.Q19)}</td>
+                <td>{fmt(totals.T19)}</td>
+              </tr>
+            </tfoot>
+          </table>
         </div>
-
-
-
-        </div>
-    </>
-    
+      </div>
+    </div>
   );
 };
 
