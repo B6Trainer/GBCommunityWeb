@@ -85,8 +85,8 @@ const Calculator = () => {
       <div className="calc-input-section">
         <h2 className="calc-section-title">Calculate Your Earnings</h2>
 
-        {/* Input Fields */}
-        <div className="calc-inputs-grid">
+        {/* Row 1: Direct Referral, Team Referral, = , Total Team */}
+        <div className="calc-row-1">
           <div className="calc-input-group">
             <label className="calc-input-label">Direct Referral</label>
             <input
@@ -96,6 +96,7 @@ const Calculator = () => {
               className="calc-input-field"
             />
           </div>
+          
           <div className="calc-input-group">
             <label className="calc-input-label">Team Referral</label>
             <input
@@ -105,64 +106,70 @@ const Calculator = () => {
               className="calc-input-field"
             />
           </div>
+          
+          <div className="calc-equals">=</div>
+          
           <div className="calc-input-group">
-            <label className="calc-input-label">Slots</label>
-            <select
+            <label className="calc-input-label">Total Team</label>
+            <div className="calc-display-value">{totalRef}</div>
+          </div>
+        </div>
+
+        {/* Row 2: Slots Slider and Slot Value */}
+        <div className="calc-row-2">
+          <div className="calc-slider-group">
+            <label className="calc-input-label">Slots: {slot}</label>
+            <input
+              type="range"
+              min="1"
+              max="10"
               value={slot}
               onChange={(e) => setSlot(+e.target.value)}
-              className="calc-select-field"
-            >
-              {[...Array(10)].map((_, i) => (
-                <option key={i + 1} value={i + 1}>{i + 1}</option>
-              ))}
-            </select>
+              className="calc-slider"
+            />
+          </div>
+          
+          <div className="calc-input-group">
+            <label className="calc-input-label">Slot Value</label>
+            <div className="calc-display-value">{selectedSlotValue}</div>
           </div>
         </div>
 
-        {/* Basic Info Cards */}
-        <div className="calc-basic-info">
-          <div className="calc-info-card">
-            <div className="calc-info-label">Total Team</div>
-            <div className="calc-info-value">{totalRef}</div>
-          </div>
-          <div className="calc-info-card">
-            <div className="calc-info-label">Slot Value</div>
-            <div className="calc-info-value">{selectedSlotValue}</div>
-          </div>
-        </div>
-
-        {/* Summary Cards with Animated Icons */}
-        <div className="calc-summary-grid">
-          <div className="calc-summary-card">
-            <div className="calc-icon-wrapper">
-              <DollarSign className="calc-icon" />
+        {/* Row 3: Direct Referral, Upgrade Bonus, Level Bonus */}
+        <div className="calc-summary-row-1">
+          <div className="calc-summary-card-sleek">
+            <div className="calc-icon-wrapper-small">
+              <DollarSign className="calc-icon-small" />
             </div>
             <div className="calc-summary-label">Direct Referral</div>
             <div className="calc-summary-value">{fmt(summary.drearning)}</div>
           </div>
           
-          <div className="calc-summary-card">
-            <div className="calc-icon-wrapper">
-              <TrendingUp className="calc-icon" />
+          <div className="calc-summary-card-sleek">
+            <div className="calc-icon-wrapper-small">
+              <TrendingUp className="calc-icon-small" />
             </div>
             <div className="calc-summary-label">Upgrade Bonus</div>
             <div className="calc-summary-value">{fmt(summary.ubearning)}</div>
           </div>
           
-          <div className="calc-summary-card">
-            <div className="calc-icon-wrapper">
-              <Gift className="calc-icon" />
+          <div className="calc-summary-card-sleek">
+            <div className="calc-icon-wrapper-small">
+              <Gift className="calc-icon-small" />
             </div>
             <div className="calc-summary-label">Level Bonus</div>
             <div className="calc-summary-value">{fmt(summary.lbearning)}</div>
           </div>
-          
-          <div className="calc-summary-card total-earnings">
-            <div className="calc-icon-wrapper">
-              <Sparkles className="calc-icon" />
+        </div>
+        
+        {/* Row 4: Total Earnings (Full Width) */}
+        <div className="calc-summary-row-2">
+          <div className="calc-summary-card-sleek total-earnings">
+            <div className="calc-icon-wrapper-small">
+              <Sparkles className="calc-icon-small" />
             </div>
             <div className="calc-summary-label">Total Earnings</div>
-            <div className="calc-summary-value">{fmt(summary.totearning)}</div>
+            <div className="calc-summary-value-large">{fmt(summary.totearning)}</div>
           </div>
         </div>
       </div>
