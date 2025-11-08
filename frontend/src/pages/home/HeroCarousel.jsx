@@ -6,6 +6,12 @@ import Slider from 'react-slick';
 import "@/assets/css/carousel.css";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import GoldBoxPlan1 from '@/assets/images/GoldBoxPlan1.jpg';
+import GoldBoxPlan2 from '@/assets/images/GoldBoxPlan2.jpg';
+import ComPlan1 from '@/assets/images/ComPlan1.jpg';
+import ComPlan2 from '@/assets/images/ComPlan2.jpg';
+import Tech1 from '@/assets/images/Tech1.jpg';
+import ZaraAi from '@/assets/images/ZaraAi.gif';
 
 const HeroCarousel = (props) => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -18,12 +24,12 @@ const HeroCarousel = (props) => {
   }, []);
 
   const carouselImages = [
-    'https://images.unsplash.com/photo-1761437856299-af640f6e75ad',
-    'https://images.unsplash.com/photo-1639322537228-f710d846310a',
-    'https://images.unsplash.com/photo-1594896733292-9a77b5809c63',
-    'https://images.pexels.com/photos/6766436/pexels-photo-6766436.jpeg',
-    'https://images.unsplash.com/photo-1605792657660-596af9009e82',
-    'https://images.pexels.com/photos/1097946/pexels-photo-1097946.jpeg',
+    GoldBoxPlan1,
+    GoldBoxPlan2,
+    ComPlan1,    
+    ComPlan2,
+    Tech1,
+    ZaraAi,
   ];
 
   // Custom arrow components

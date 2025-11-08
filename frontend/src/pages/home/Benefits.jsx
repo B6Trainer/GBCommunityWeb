@@ -50,7 +50,7 @@ const Benefits = (props) => {
       {/* Benefits Section */}
       <section className="section-container" data-testid={sectionid}>
         
-        <SectionHeading heading={"Why Choose Gold Bucks?"}/>
+        <SectionHeading heading={"Why to join Gold Bucks Community?"}/>
         
         <div className="section-grid">
           {benefits.map((benefit, index) => {
@@ -75,27 +75,6 @@ const Benefits = (props) => {
         </div>
 
 
-        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {benefits.map((benefit, index) => {
-            const Icon = benefit.icon;
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                viewport={{ once: true }}
-                className="card-gold-glossy rounded-2xl p-6 hover:gold-glow transition-all duration-300 group"
-              >
-                <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${benefit.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 icon-twinkle`}>
-                  <Icon className="w-8 h-8 text-black" />
-                </div>
-                <h3 className="text-xl font-bold gold-text mb-3">{benefit.title}</h3>
-                <p className="text-gold-500 text-sm leading-relaxed">{benefit.description}</p>
-              </motion.div>
-            );
-          })}
-        </div> */}
       </section>
 
 

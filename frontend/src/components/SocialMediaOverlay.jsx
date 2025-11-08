@@ -12,7 +12,7 @@ const SocialMediaOverlay = () => {
     
     const timer = setInterval(() => {
       setIsVisible((prev) => !prev);
-    }, isVisible ? 20000 : 5000);
+    }, isVisible ? 5000 : 10000);
 
     return () => clearInterval(timer);
   }, [isVisible, isHovered]);

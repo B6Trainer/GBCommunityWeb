@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { TrendingUp, Users, DollarSign, Briefcase, UserPlus, Wallet, GitBranch, Coins, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import {  UserPlus, Wallet, GitBranch, Coins } from 'lucide-react';
 
 import HeroCarousel from './HeroCarousel';
 import Benefits from './Benefits';

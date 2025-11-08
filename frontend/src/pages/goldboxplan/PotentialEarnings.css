@@ -1,17 +1,17 @@
 /* ========================================
-   Calculator Component Styles
-   Gold-themed calculator with sleek design
+   Potential Earnings Component Styles
+   Gold-themed earnings display with sleek design
    ======================================== */
 
-/* Calculator Container */
-.calculator-container {
+/* Container */
+.potential-earnings-container {
   max-width: 1280px;
   margin: 0 auto;
   padding: 1rem;
 }
 
-/* Section 1: Input & Summary Section */
-.calc-input-section {
+/* Section 1: Summary (Now at top) */
+.pe-summary-section {
   background: linear-gradient(135deg, 
     rgba(255, 215, 0, 0.12) 0%,
     rgba(255, 199, 0, 0.08) 50%,
@@ -22,13 +22,11 @@
   border: 2px solid rgba(255, 215, 0, 0.3);
   border-radius: 1.5rem;
   padding: 1.5rem;
-  margin-bottom: 2rem;
   transition: all 0.4s ease;
-  position: relative;
-  overflow: hidden;
+  margin-bottom: 2rem;
 }
 
-.calc-section-title {
+.pe-summary-title {
   font-size: 1.5rem;
   font-weight: 700;
   color: #FFD700;
@@ -37,136 +35,18 @@
   text-shadow: 0 2px 10px rgba(255, 215, 0, 0.5);
 }
 
-/* Row 1: Direct Referral, Team Referral, =, Total Team */
-.calc-row-1 {
-  display: flex;
-  align-items: flex-end;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  flex-wrap: nowrap;
-}
-
-.calc-input-group {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-}
-
-.calc-input-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #FFD700;
-  margin-bottom: 0.5rem;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-/* Remove increment/decrement arrows from number inputs */
-.calc-no-spinner::-webkit-outer-spin-button,
-.calc-no-spinner::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.calc-no-spinner[type=number] {
-  -moz-appearance: textfield;
-}
-
-.calc-input-field {
-  padding: 0.6rem 0.8rem;
-  background: rgba(0, 0, 0, 0.3);
-  border: 2px solid rgba(255, 215, 0, 0.3);
-  border-radius: 0.5rem;
-  color: #FFD700;
-  font-size: 0.95rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  width: 100%;
-}
-
-.calc-input-field:focus {
-  outline: none;
-  border-color: rgba(255, 215, 0, 0.6);
-  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
-}
-
-.calc-equals {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #FFD700;
-  margin-bottom: 0.3rem;
-  flex-shrink: 0;
-}
-
-.calc-display-value {
-  padding: 0.6rem 0.8rem;
-  background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 176, 0, 0.15));
-  border: 2px solid rgba(255, 215, 0, 0.4);
-  border-radius: 0.5rem;
-  color: #FFD700;
-  font-size: 0.95rem;
-  font-weight: 700;
-  text-align: center;
-}
-
-/* Row 2: Slots Slider and Slot Value */
-.calc-row-2 {
-  display: flex;
-  align-items: flex-end;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  flex-wrap: nowrap;
-}
-
-.calc-slider-group {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
-}
-
-.calc-slider {
-  width: 100%;
-  height: 6px;
-  background: rgba(255, 215, 0, 0.2);
-  border-radius: 5px;
-  outline: none;
-  -webkit-appearance: none;
-}
-
-.calc-slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  background: linear-gradient(135deg, #FFD700, #FFC700);
-  border-radius: 50%;
-  cursor: pointer;
-  border: 2px solid rgba(255, 215, 0, 0.8);
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
-}
-
-.calc-slider::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
-  background: linear-gradient(135deg, #FFD700, #FFC700);
-  border-radius: 50%;
-  cursor: pointer;
-  border: 2px solid rgba(255, 215, 0, 0.8);
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
-}
-
-/* Summary Cards - Sleek Version */
-.calc-summary-row-1 {
+/* Sleek Earning Cards Layout */
+.pe-summary-row-1 {
   display: flex;
   gap: 0.75rem;
   margin-bottom: 0.75rem;
 }
 
-.calc-summary-row-2 {
+.pe-summary-row-2 {
   display: flex;
 }
 
-.calc-summary-card-sleek {
+.pe-earning-card-sleek {
   flex: 1;
   background: linear-gradient(135deg,
     rgba(255, 215, 0, 0.12) 0%,
@@ -182,13 +62,13 @@
   overflow: hidden;
 }
 
-.calc-summary-card-sleek:hover {
+.pe-earning-card-sleek:hover {
   transform: translateY(-4px);
   border-color: rgba(255, 215, 0, 0.6);
   box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
 }
 
-.calc-summary-card-sleek.total-earnings {
+.pe-earning-card-sleek.total {
   background: linear-gradient(135deg,
     rgba(255, 215, 0, 0.18) 0%,
     rgba(255, 199, 0, 0.12) 50%,
@@ -198,7 +78,7 @@
 }
 
 /* Small Animated Icon */
-.calc-icon-wrapper-small {
+.pe-icon-wrapper-small {
   width: 40px;
   height: 40px;
   margin: 0 auto 0.5rem;
@@ -208,10 +88,10 @@
   background: linear-gradient(135deg, rgba(255, 215, 0, 0.25), rgba(255, 176, 0, 0.15));
   border-radius: 50%;
   border: 1.5px solid rgba(255, 215, 0, 0.4);
-  animation: icon-pulse-small 2s ease-in-out infinite;
+  animation: pe-icon-pulse 2s ease-in-out infinite;
 }
 
-@keyframes icon-pulse-small {
+@keyframes pe-icon-pulse {
   0%, 100% {
     box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
   }
@@ -220,14 +100,14 @@
   }
 }
 
-.calc-icon-small {
+.pe-icon-small {
   width: 20px;
   height: 20px;
   color: #FFD700;
   filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.7));
 }
 
-.calc-summary-label {
+.pe-earning-label {
   font-size: 0.7rem;
   color: rgba(255, 215, 0, 0.8);
   margin-bottom: 0.4rem;
@@ -236,7 +116,7 @@
   font-weight: 600;
 }
 
-.calc-summary-value {
+.pe-earning-value {
   font-size: 1.1rem;
   font-weight: 700;
   background: linear-gradient(135deg, #FFD700, #FFC700);
@@ -245,7 +125,7 @@
   background-clip: text;
 }
 
-.calc-summary-value-large {
+.pe-earning-value-large {
   font-size: 1.5rem;
   font-weight: 800;
   background: linear-gradient(135deg, #FFD700, #FFC700);
@@ -282,15 +162,8 @@
   }
 }
 
-/* Divider */
-.calc-divider {
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.5), transparent);
-  margin: 2rem 0;
-}
-
-/* Section 2: Breakdown Table */
-.calc-breakdown-section {
+/* Section 2: Breakdown Table (Now at bottom) */
+.pe-breakdown-section {
   background: linear-gradient(135deg, 
     rgba(255, 215, 0, 0.08) 0%,
     rgba(255, 199, 0, 0.05) 50%,
@@ -302,14 +175,14 @@
   overflow: hidden;
 }
 
-.calc-breakdown-header {
+.pe-breakdown-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
 }
 
-.calc-breakdown-title {
+.pe-section-title {
   font-size: 1.5rem;
   font-weight: 700;
   color: #FFD700;
@@ -317,7 +190,7 @@
   margin: 0;
 }
 
-.calc-toggle-btn {
+.pe-toggle-btn {
   background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 176, 0, 0.15));
   border: 1.5px solid rgba(255, 215, 0, 0.4);
   border-radius: 0.5rem;
@@ -330,7 +203,7 @@
   justify-content: center;
 }
 
-.calc-toggle-btn:hover {
+.pe-toggle-btn:hover {
   background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(255, 176, 0, 0.25));
   border-color: rgba(255, 215, 0, 0.6);
   transform: translateY(-2px);
@@ -338,25 +211,25 @@
 }
 
 /* Collapsible Table Animation */
-.calc-table-wrapper {
+.pe-table-wrapper {
   max-height: 2000px;
   overflow: hidden;
   transition: max-height 0.5s ease-in-out, opacity 0.3s ease-in-out;
   opacity: 1;
 }
 
-.calc-table-wrapper.collapsed {
+.pe-table-wrapper.collapsed {
   max-height: 0;
   opacity: 0;
 }
 
 /* Mobile-First Responsive Table */
-.calc-table-container {
+.pe-table-container {
   width: 100%;
   overflow-x: visible;
 }
 
-.calc-table {
+.pe-table {
   width: 100%;
   border-collapse: collapse;
   background: rgba(0, 0, 0, 0.2);
@@ -364,11 +237,11 @@
   overflow: hidden;
 }
 
-.calc-table thead {
+.pe-table thead {
   background: linear-gradient(135deg, rgba(255, 215, 0, 0.25), rgba(255, 176, 0, 0.2));
 }
 
-.calc-table th {
+.pe-table th {
   padding: 1rem 0.75rem;
   text-align: right;
   font-weight: 700;
@@ -379,38 +252,38 @@
   letter-spacing: 0.5px;
 }
 
-.calc-table th:first-child {
+.pe-table th:first-child {
   text-align: left;
 }
 
-.calc-table tbody tr {
+.pe-table tbody tr {
   transition: background 0.3s ease;
   border-bottom: 1px solid rgba(255, 215, 0, 0.1);
 }
 
-.calc-table tbody tr:hover {
+.pe-table tbody tr:hover {
   background: rgba(255, 215, 0, 0.08);
 }
 
-.calc-table td {
+.pe-table td {
   padding: 0.875rem 0.75rem;
   text-align: right;
   font-size: 0.875rem;
   color: rgba(255, 215, 0, 0.9);
 }
 
-.calc-table td:first-child {
+.pe-table td:first-child {
   text-align: left;
   font-weight: 600;
   color: #FFD700;
 }
 
-.calc-table tfoot {
+.pe-table tfoot {
   background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 176, 0, 0.15));
   font-weight: 700;
 }
 
-.calc-table tfoot td {
+.pe-table tfoot td {
   padding: 1rem 0.75rem;
   color: #FFD700;
   border-top: 2px solid rgba(255, 215, 0, 0.4);
@@ -418,121 +291,102 @@
 
 /* Mobile Responsive - Same layout for all screens */
 @media (max-width: 768px) {
-  .calculator-container {
+  .potential-earnings-container {
     padding: 0.75rem;
   }
 
-  .calc-input-section,
-  .calc-breakdown-section {
+  .pe-breakdown-section,
+  .pe-summary-section {
     padding: 1rem;
     border-radius: 1rem;
   }
 
-  .calc-section-title,
-  .calc-breakdown-title {
+  .pe-section-title,
+  .pe-summary-title {
     font-size: 1.25rem;
   }
 
-  .calc-row-1,
-  .calc-row-2 {
+  .pe-summary-row-1 {
     gap: 0.5rem;
   }
 
-  .calc-input-label {
-    font-size: 0.7rem;
-  }
-
-  .calc-input-field,
-  .calc-display-value {
-    padding: 0.5rem 0.6rem;
-    font-size: 0.85rem;
-  }
-
-  .calc-equals {
-    font-size: 1.2rem;
-  }
-
-  .calc-summary-row-1 {
-    gap: 0.5rem;
-  }
-
-  .calc-summary-card-sleek {
+  .pe-earning-card-sleek {
     padding: 0.6rem;
     border-radius: 0.6rem;
   }
 
-  .calc-icon-wrapper-small {
+  .pe-icon-wrapper-small {
     width: 35px;
     height: 35px;
     margin-bottom: 0.4rem;
   }
 
-  .calc-icon-small {
+  .pe-icon-small {
     width: 18px;
     height: 18px;
   }
 
-  .calc-summary-label {
+  .pe-earning-label {
     font-size: 0.65rem;
   }
 
-  .calc-summary-value {
+  .pe-earning-value {
     font-size: 1rem;
   }
 
-  .calc-summary-value-large {
+  .pe-earning-value-large {
     font-size: 1.25rem;
   }
 
   /* Mobile table optimization */
-  .calc-table th,
-  .calc-table td {
+  .pe-table th,
+  .pe-table td {
     padding: 0.5rem 0.25rem;
     font-size: 0.7rem;
   }
 
-  .calc-table th {
+  .pe-table th {
     font-size: 0.65rem;
   }
 }
 
 @media (max-width: 480px) {
-  .calc-summary-value {
+  .pe-earning-value {
     font-size: 0.9rem;
   }
 
-  .calc-summary-value-large {
+  .pe-earning-value-large {
     font-size: 1.1rem;
   }
 
   /* Extra small screens */
-  .calc-table th,
-  .calc-table td {
+  .pe-table th,
+  .pe-table td {
     padding: 0.4rem 0.2rem;
     font-size: 0.65rem;
   }
 
-  .calc-table th {
+  .pe-table th {
     font-size: 0.6rem;
   }
 }
 
 /* Ensure no horizontal scroll */
-.calculator-container {
+.potential-earnings-container {
   overflow-x: hidden;
 }
 
-.calc-table-container {
+.pe-table-container {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
 
 /* Hide scrollbar but keep functionality */
-.calc-table-container::-webkit-scrollbar {
+.pe-table-container::-webkit-scrollbar {
   display: none;
 }
 
-.calc-table-container {
+.pe-table-container {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }

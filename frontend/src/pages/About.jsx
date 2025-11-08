@@ -21,7 +21,7 @@ const About = () => {
       >
         Building the future of digital gold investment through blockchain technology
       </motion.p>
-
+      <p className="text-gold-500 leading-relaxed mb-16">Gold Bucks is a forward-thinking Web3 solution provider, bridging the gap between traditional gold markets and decentralized finance (DeFi) using blockchain technology. We aim to revolutionize the way gold is transacted, invested, and secured by offering innovative, blockchain-powered products. Our goal is to provide transparency, security, and convenience in the gold market while fostering a robust and engaged community. Our solutions will allow gold traders, investors, and enthusiasts to seamlessly engage with digital assets while keeping gold at the core of the value proposition.</p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
         {[
           { icon: Target, title: 'Our Mission', text: 'To democratize gold investment and make it accessible to everyone through blockchain technology.' },
